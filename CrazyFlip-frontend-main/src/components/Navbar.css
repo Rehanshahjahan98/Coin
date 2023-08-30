@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#container {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  background-color: rgb(0, 0, 0);
+  z-index: 1;
+}
+
+#right-clicks {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 16px;
+  display: flex;
+  align-items: flex-start;
+  z-index: 999;
+}
+
+.select-opts,
+.small-btn {
+  margin-right: 10px;
+}
+
+.select-opts {
+  position: absolute;
+  z-index: -1;
+  right: 350px;
+  margin: 0 16px;
+  padding: 8px 16px;
+}
+
+.select-opts:hover {
+  height: 40px;
+  padding: 8px 16px;
+  margin: 0 16px;
+  font-weight: 1000;
+}
+
+.btn {
+  padding: 3px 8px;
+  margin: 0 5px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+  background-color: #ffcc00;
+  color: black;
+}
+
+#main-logo {
+  margin: 0 20px;
+  height: 100%;
+  width: auto;
+  text-decoration: none;
+  color: inherit;
+}
+
+.connect-popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  z-index: 999;
+}
+
+.faq-card-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  z-index: 999;
+}
+
+.top-right {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.small-btn {
+  padding: 8px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 20px;
+  background-color: #ffc746;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+}
+
+.small-btn:hover {
+  background-color: #ffac24;
+}
+
+.small-btn {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.shorten-string {
+  color: black;
+}
+
+@media (max-width: 1440px) {
+  #right-clicks {
+    margin: 12px;
+  }
+
+  .select-opts {
+    right: 300px;
+  }
+
+  .btn {
+    font-size: 11px;
+  }
+
+  .small-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  #main-logo {
+    margin: 0 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #right-clicks {
+    margin: 8px;
+  }
+
+  .select-opts {
+    right: 250px;
+  }
+
+  .btn {
+    font-size: 10px;
+  }
+
+  .small-btn {
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+
+  #main-logo {
+    margin: 0 12px;
+  }
+}

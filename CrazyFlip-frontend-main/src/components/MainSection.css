@@ -1,0 +1,297 @@
+#coinImg {
+  width: 100%;
+}
+
+.coin-flip {
+  position: relative;
+  top: -320px;
+  margin: 0 auto;
+  width: 320px;
+}
+
+#coin {
+  position: relative;
+  margin: 0 auto;
+  width: 400px;
+  height: 400px;
+  top: -280px;
+}
+
+#coin div {
+  width: 100%;
+  height: 100%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.side-a {
+  content: url('../assets/alien-coin.png');
+  color: white;
+  text-align: center;
+}
+
+.side-b {
+  content: url('../assets/Head_coin.png');
+  color: white;
+  text-align: center;
+}
+
+.side-c {
+  content: url('../assets//coinflip.gif');
+  color: white;
+  text-align: center;
+}
+
+#coin {
+  transform-style: preserve-3d;
+  margin-top: 20px;
+  transition: -webkit-transform 1s ease-in;
+  -webkit-transition: -webkit-transform 1s ease-in;
+  -moz-transition: -webkit-transform 1s ease-in;
+  -ms-transition: -webkit-transform 1s ease-in;
+  -o-transition: -webkit-transform 1s ease-in;
+}
+
+#coin div {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.center-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 53.5vh;
+  text-align: center;
+}
+
+#coin.heads {
+  -webkit-animation: flipHeads 2s ease-in forwards;
+  -moz-animation: flipHeads 2s ease-out forwards;
+  -o-animation: flipHeads 2s ease-in forwards;
+  animation: flipHeads 1s 0s linear infinite;
+}
+
+#coin.tails {
+  -webkit-animation: flipTails 2s ease-out forwards;
+  -moz-animation: flipTails 2s ease-out forwards;
+  -o-animation: flipTails 2s ease-out forwards;
+  animation: flipTails 1s 0s linear infinite;
+}
+
+@keyframes flipHeads {
+  from {
+    -webkit-transform: rotateY(0);
+    -moz-transform: rotateY(0);
+    transform: rotateY(0);
+  }
+
+  to {
+    -webkit-transform: rotateY(540deg);
+    -moz-transform: rotateY(540deg);
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes flipTails {
+  from {
+    -webkit-transform: rotateY(0);
+    -moz-transform: rotateY(0);
+    transform: rotateY(0);
+  }
+
+  to {
+    -webkit-transform: rotateY(720deg);
+    -moz-transform: rotateY(720deg);
+    transform: rotateY(360deg);
+  }
+}
+
+.connect-popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+@media (max-width: 1440px) {
+  .flip-btn {
+    top: 250px;
+    left: 470px;
+    margin-left: 100px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .flip-btn {
+    top: 250px;
+    left: 390px;
+    margin-left: 80px;
+  }
+
+  .coin-flip {
+    width: 240px;
+    top: -260px;
+  }
+
+  #coin {
+    width: 240px;
+    height: 240px;
+    top: -260px;
+  }
+
+  #coin div {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+  }
+
+  .popup-message {
+    top: 630px;
+  }
+}
+
+.hello {
+  position: relative;
+}
+
+.flip-btn {
+  background-color: transparent;
+  color: white;
+  padding: 15px 28px;
+  font-size: large;
+  position: absolute;
+  top: 7%;
+  border: 2px solid white;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  width: 200px !important;
+  text-align: center;
+  margin-top: 120px;
+  margin-left: 15px;
+}
+
+.flip-btn:hover {
+  background-color: yellow;
+  color: black;
+}
+
+.stop-btn {
+  background-color: transparent;
+  color: white;
+  padding: 20px 30px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  margin: 0 10px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 170px;
+  left: 0;
+  right: 0;
+}
+
+.popup-message {
+  position: fixed;
+  top: 670px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 18px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.popup-message:hover {
+  opacity: 0.9;
+}
+
+.popup-message p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.popup-message button {
+  background-color: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.popup-message button:hover {
+  background-color: #1565c0;
+}
+
+.bg-img {
+  background-image: url('/src/assets/astro1.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+#buttons-div {
+  padding-top: 100px;
+  margin-left: 220px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+#buttons-div>* {
+  flex: 1 0 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.buttons-left {
+  display: flex;
+  justify-content: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-basis: 50%;
+}
+
+@media (max-width: 1440px) {
+  #buttons-div {
+    margin-left: 150px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #buttons-div {
+    margin-left: 100px;
+  }
+}

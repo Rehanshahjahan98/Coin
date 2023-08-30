@@ -1,0 +1,51 @@
+.bg-poster {
+  background-image: url("/src/assets/astro1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#hopium-logo {
+  height: 150px;
+  width: auto;
+}
+
+#coming-soon-logo {
+  width: 400px;
+}
+
+@media screen and (max-width: 1440px) {
+  #hopium-logo {
+    height: 60px;
+    margin-bottom: 10px;
+  }
+
+  #coming-soon-logo {
+    width: 240px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #hopium-logo {
+    height: 50px;
+    margin-bottom: 5px;
+  }
+
+  #coming-soon-logo {
+    width: 180px;
+    margin-top: 5px;
+  }
+}

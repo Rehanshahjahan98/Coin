@@ -1,0 +1,90 @@
+/* Default styles */
+
+.signup-page {
+  background: url("../assets/preview.png");
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#side-logo {
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.signup-form-container {
+  text-align: center;
+  width: 400px;
+  color: white;
+}
+
+.dotH2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.dotH3 {
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+.form-container {
+  text-align: left;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  color: #fff;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: #35c496;
+}
+
+.registerbtn {
+  background-color: #35c496;
+  color: white;
+  padding: 16px 20px;
+  margin: 20px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  font-size: 16px;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+p>a {
+  color: black;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1440px) {
+  .signup-form-container {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .signup-form-container {
+    width: 300px;
+  }
+}

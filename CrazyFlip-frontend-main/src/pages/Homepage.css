@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Sigmar&family=Vina+Sans&display=swap");
+
+
+.container-div {
+  background-image: url("/src/assets/astro1.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-color: grey;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+
+#side-logo {
+  height: 100px;
+}
+
+#text-content {
+  margin-top: 20px;
+  font-weight: bolder;
+  color: #e0942f;
+  text-transform: uppercase;
+  font-size: x-large;
+  line-height: 1.5;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1440px) {
+  .container {
+    background-size: cover;
+    background-color: grey;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    background-size: cover;
+    background-color: grey;
+  }
+}

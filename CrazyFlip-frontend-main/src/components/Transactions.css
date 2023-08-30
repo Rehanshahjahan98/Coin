@@ -1,0 +1,49 @@
+.trans-container {
+  position: relative;
+  top: -62px;
+  padding: 50px;
+  background-color: #000;
+  border: 2px solid black;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#transactions-bg {
+  background-color: #000;
+}
+
+.res-table {
+  margin: 10px auto;
+  width: fit-content;
+  padding: 10px;
+}
+
+td {
+  color: white;
+  padding: 10px 14px;
+  border-bottom: 2px solid white;
+}
+
+h1 {
+  margin: 0 auto;
+  text-align: center;
+  width: fit-content;
+  color: white;
+  border-bottom: 2px solid white;
+}
+
+@media (max-width: 1440px) {
+  .trans-container {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .trans-container {
+    padding: 20px;
+  }
+
+  td {
+    padding: 8px 12px;
+  }
+}

@@ -1,0 +1,315 @@
+@font-face {
+  font-family: "race sport";
+  src: url('./assets/fonts/RACE\ SPORT.TTF');
+}
+@font-face {
+  font-family: "racesport";
+  src: url('./assets/fonts/small/Race\ Sport.ttf');
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif !important;
+  background: black !important;
+}
+
+.header_div{
+  font-family: race sport;
+  color: orange !important;
+}
+.hopiumbet{
+  color: orange;
+}
+.afilliate{
+  color: orange;
+}
+.myAccount{
+  font-family: race sport;
+  color: orange;
+  font-size: 30px;
+}
+.signUpBtn{
+  width: 100px;
+}
+.menu-btn {
+  /* width: 86px; */
+  height: 40px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  position: absolute;
+  top: 15%;
+  left: 2%;
+  cursor: pointer;
+  /* box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2); */
+  outline: 0;
+  transition: all 0.25s ease;
+}
+
+.menu-btn2 {
+  /* width: 86px; */
+  height: 40px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  position: absolute;
+  top: 1%;
+  right: 2%;
+  cursor: pointer;
+  /* box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2); */
+  outline: 0;
+  transition: all 0.25s ease;
+}
+.menu-div-small-screen{
+  z-index: 999 !important;
+}
+button:hover {
+  opacity: 0.8;
+  transition: all 0.25s ease;
+}
+
+.menu {
+  /* background: #34495e; */
+  /* height: 100vh; */
+  width: 100%;
+  opacity: 0;
+  position: absolute;
+  visibility: hidden;
+  transition: all 0.25s ease;
+  transform: translateX(-50%);
+}
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  padding-left: 30px;
+}
+.menu ul {
+  padding: 0;
+  margin: 0;
+}
+.menu ul li {
+  font-size: 20px;
+  /* border-bottom: 1px solid #fff; */
+  transition: all 0.25s ease;
+  animation: fadeInRight 0.25s ease forwards;
+  /* opacity: 0; */
+}
+.menu ul li:hover {
+  /* opacity: 0.8; */
+  transition: all 0.25s ease;
+  /* background: #000; */
+  cursor: pointer;
+}
+.menu ul li a:hover{
+  color: orange;
+}
+.logout_btn{
+  box-shadow: unset !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+}
+.logout_btn:hover{
+  color: orange !important;
+}
+
+.active {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.25s ease;
+  transform: translateX(0);
+}
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+.menu-bottom{
+  position: absolute;
+  bottom: 20%;
+  /* text-align: center; */
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  justify-content: center;
+  width: 100%;
+  /* display: inline-block !important; */
+}
+
+.password_input{
+  padding: 0px !important;
+  width: 235px !important;
+}
+
+.content-div{
+  width: 100% !important;
+  background-image: url('../src/images/Background.png');
+  background-position: center;
+  min-height: 100vh;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  object-fit: cover;
+
+  /* z-index: 999; */
+}
+
+.menu_div2{
+  display: none;
+}
+.menu_div ul li:hover{
+  cursor: pointer;
+  color: orange;
+}
+
+/* transactions style  */
+.table-responsive {
+  overflow-x: auto;
+}
+
+.transaction-header {
+  background-color: transparent !important;
+  border-radius: 8px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.transaction-row {
+  background-color: transparent !important;
+  border-radius: 8px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  
+}
+
+.transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-color: transparent !important;
+}
+
+.transaction-col {
+  color: white !important;
+  padding: 10px;
+  /* border: 1px solid #ddd; */
+  background-color: transparent !important;
+  border: unset !important;
+}
+
+.transaction-info {
+  padding: 5px;
+}
+
+.overflowX-auto {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.transaction-info p {
+  font-weight: bold;
+  font-size: 13px;
+  color: white;
+}
+
+
+
+
+/* Add more styling here as needed */
+
+
+
+
+@media (max-width: 800px) {
+  .menu_div2{
+    display: block !important;
+    padding-top: 70px !important;
+    width: 60% !important;
+  }
+  .menu_div2 ul li{
+    font-size: 16px !important;
+  }
+  .logout_btn_div{
+    width: 100% !important;
+  }
+  .logout_btn{
+    font-size: 16px !important;
+  }
+  .menu-div-small-screen{
+     background-image: url('../src/images/Background.png');
+  }
+  .hopiumbet{
+    font-size: 14px;
+  }
+  .header-logo{
+    width: 40px;
+  }
+  .afilliate{
+    font-size: 14px;
+  }
+  .password_input{
+    width: 200px !important;
+  }
+  .div-ul{
+    display: none;
+  }
+  .content-div{
+    width: 100% !important;
+    background-image: url('../src/images/Background.png');
+    background-position: center;
+    min-height: 100vh;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    padding-left: 50px !important;
+
+    /* z-index: 999; */
+  }
+  
+  .menu_div{
+    display: none !important;
+  }
+  
+  .menu-btn{
+    display: block !important;
+  }
+  .menu-bottom{
+    bottom: 10% !important;
+  }
+}
+@media (max-width:500px) {
+  .myAccount{
+    font-size: 25px !important;
+    margin-top: 70px !important;
+    margin-bottom: 30px !important;
+  }
+  .affilliate_mai_div p{
+    font-size: 14px !important;
+  }
+  .transaction_details p{
+    font-size: 14px !important;
+  }
+  .my_account_main_div{
+    padding: 10px;
+  }
+  .gaps{
+    justify-content: space-between;
+    gap: unset !important;
+  }
+  .my_account_main_div p{
+    font-size: 14px !important;
+
+  }
+
+  .content-div{
+    padding: 0px !important;
+
+  }
+  
+}
