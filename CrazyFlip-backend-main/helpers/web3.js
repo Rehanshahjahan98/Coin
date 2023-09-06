@@ -2,17 +2,17 @@ const Web3 = require("web3");
 const contractAbi = require("../contract-abis/affliate.json")
 
 const privateKey =
-  "f118b6ecb3360405995d1356f9e16bcb4200ad335d53289801d459c60e52cd46";
+  "87d1970d23c81f49689cc37f8b3415e986eba8bbb8683649fa1083ed38d2a79f";
 const infuraUrl =
-  "https://polygon-mumbai.infura.io/v3/733df61c6a694169bf6ac7d5d28c85de";
+  "https://eth-sepolia.g.alchemy.com/v2/5R5mOr7D3Xes8emZgWrKt8xsaNFl6yUE";
 
 
 
 const addAffliateToContract = async ({ referredAddress, affiliateAddress }) => {
   try {
     let web3 = new Web3(infuraUrl);
-    const adminAddress = "0xF1d3217f5D8368248E9AfBAd25e5396b5a93599b";
-    const contractAddress = '0xBB1Af60b4B80A7ee8539c35C26877BE1a3943675';
+    const adminAddress = "0x0516A5Fd8d7FF48fa3CC5d25394189b25bFc8c9a";
+    const contractAddress = '0xCb3CC7a59b4DFAa14f62668C2C588bBF1c59D13F';
 
     const contract = new web3.eth.Contract(contractAbi, contractAddress);
     const isAffiliated = await contract.methods.isAffiliated(affiliateAddress).call();
@@ -96,7 +96,7 @@ const addAffliateToContract = async ({ referredAddress, affiliateAddress }) => {
 const whoReffered = async ({ referredAddress }) => {
   try {
     let web3 = new Web3(infuraUrl);
-    const contractAddress = '0xBB1Af60b4B80A7ee8539c35C26877BE1a3943675';
+    const contractAddress = '0xCb3CC7a59b4DFAa14f62668C2C588bBF1c59D13F';
 
     const contract = new web3.eth.Contract(contractAbi, contractAddress);
     const referred = await contract.methods.getWhoReferred(referredAddress).call();

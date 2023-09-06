@@ -94,7 +94,7 @@ const MyAccount = ({ logindata }) => {
 
   // code to delete account 
   const deleteAccount = () => {
-    axios.post('http://localhost:8080/account/delete', logindata, { withCredentials: true, })
+    axios.post('http://185.193.126.26:8080/account/delete', logindata, { withCredentials: true, })
       .then(response => {
         // Handle the response data
         toast.success('Account deleted successfully!', {
@@ -119,7 +119,7 @@ const MyAccount = ({ logindata }) => {
 
   const changePassword = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:8080/account/password', newpassword, { withCredentials: true, })
+    axios.post('http://185.193.126.26:8080/account/password', newpassword, { withCredentials: true, })
 
       .then(response => {
         // Handle the response data
@@ -189,12 +189,12 @@ const MyAccount = ({ logindata }) => {
     //   setShowPopover(!showPopover);
     setModalShow(true)
     // setLink(link)
-    setLink(`http://localhost:3000/SignUp?walletAddress=${currentAccount}`)
+    setLink(`http://185.193.126.26:3000/SignUp?walletAddress=${currentAccount}`)
 
   }
-  // useEffect(()=>{
-  //   setLink(`http://localhost:3000/SignUp?walletAddress=${currentAccount}`)
-  // }, [currentAccount])
+   useEffect(()=>{
+     setLink(`http://185.193.126.26:3000/SignUp?walletAddress=${currentAccount}`)
+   }, [currentAccount])
   return (
     <div className="pb-5 my_account_main_div" style={{ minHeight: "100vh" }}>
 

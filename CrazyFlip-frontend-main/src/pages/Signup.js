@@ -46,20 +46,20 @@ export default function Signup() {
   const createAccount = (e) => {
     e.preventDefault();
   console.log(referredAddress, "hello");
-      // if (referredAddress) {
-      //   axios.post('http://localhost:8080/contract/add-affliate', { referredAddress: referredAddress?.toLowerCase(), affiliateAddress: currentAccount?.toLocaleLowerCase() })
-      //     .then(response => {
-      //       toast.success('affliate added successfully!', {
-      //         position: 'top-right',
-      //         autoClose: 3000,
-      //         hideProgressBar: false,
-      //         closeOnClick: true,
-      //         pauseOnHover: true,
-      //         draggable: true,
-      //       });
+      if (referredAddress) {
+    	  axios.post('http://185.193.126.26:8080/contract/add-affliate', { referredAddress: referredAddress?.toLowerCase(), affiliateAddress: currentAccount?.toLocaleLowerCase() })
+      	    .then(response => {
+       	      toast.success('affliate added successfully!', {
+      		position: 'top-right',
+      		autoClose: 3000,
+      		hideProgressBar: false,
+      		closeOnClick: true,
+       		pauseOnHover: true,
+       		draggable: true,
+       	      });
 
       data.walletAddress = currentAccount;
-      axios.post('http://localhost:8080/signUp', data)
+      axios.post('http://185.193.126.26:8080/SignUp', data)
 
         .then(response => {
           toast.success('Registered successfully!', {
@@ -86,20 +86,20 @@ export default function Signup() {
             draggable: true,
           });
         });
-    // })
-    // .catch(error => {
-    //   toast.error(error.response.data.message || error.response.data.err[0].msg, {
-    //     position: 'top-right',
-    //     autoClose: 3000,
-    //     hideProgressBar: false,
-    //     closeOnClick: true,
-    //     pauseOnHover: true,
-    //     draggable: true,
-    //   });
-    // });
+     })
+     .catch(error => {
+       toast.error(error.response.data.message || error.response.data.err[0].msg, {
+         position: 'top-right',
+         autoClose: 3000,
+         hideProgressBar: false,
+         closeOnClick: true,
+         pauseOnHover: true,
+         draggable: true,
+      });
+     });
       
 
-  // }
+  }
 }
   const handleOnChange = (e) => {
     const { name, value } = e.target;

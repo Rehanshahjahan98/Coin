@@ -9,7 +9,7 @@ const TransactionsDetail = () => {
 
   useEffect(() => {
     const getTransactions = async () => {
-      axios.get('http://localhost:8080/admin/transactions', { withCredentials: true })
+      axios.get('http://185.193.126.26:8080/admin/transactions', { withCredentials: true })
         .then(response => {
           console.log(response, "ressss")
           setTransactionData(response.data.data)

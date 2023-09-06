@@ -9,7 +9,7 @@ const [logindata, setLogindata]=useState({})
       const getuserDetail = async ()=>{
         try {
           // console.log("inside")
-          const response = await axios('http://localhost:8080/login', { withCredentials: true, method: "get", });
+          const response = await axios('http://185.193.126.26:8080/login', { withCredentials: true, method: "get", });
           // console.log(response.data.data, "get user detail");
           setLogindata(response.data.data)
         } catch (error) {

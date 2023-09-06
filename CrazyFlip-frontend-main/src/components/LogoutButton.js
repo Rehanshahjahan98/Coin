@@ -9,7 +9,7 @@ const LogoutButton = () => {
   const handleLogout = async () => {
     try {
       // Make a POST request to the backend logout endpoint
-      const response = await axios.get('http://localhost:8080/logout');
+      const response = await axios.get('http://185.193.126.26:8080/logout');
       console.log(response, "response");
 
       // Check the response status and handle accordingly

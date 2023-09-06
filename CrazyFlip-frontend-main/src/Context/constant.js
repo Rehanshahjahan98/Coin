@@ -4,9 +4,9 @@ import affiliate from "./affiliate.json";
 import erc20 from "./erc20.json";
 //NFT MARKETPLACE
 export const coinFlipContractAddress =
-	"0xFE3dA000696F9d9C590Be4ceFa232eb1E4cECCbD";
+	"0xBE8Bd5Ea42b2355d0a674237c396ba00B3Bb0fA5";
 export const affiliateContractAddress =
-	"0xe49237bdD1048CD0D3E9e5427C4DEA6EebC4083F";
+	"0xCb3CC7a59b4DFAa14f62668C2C588bBF1c59D13F";
 export const coinFlipABI = coinFlip.abi;
 export const affiliateABI = affiliate.abi;
 export const NFTMarketplaceABI = coinFlip.abi;

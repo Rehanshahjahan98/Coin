@@ -50,7 +50,7 @@ const Content = ({ logindata }) => {
   const [error, setError] = useState("");
   const [currentAccount, setCurrentAccount] = useState("");
   const [accountBalance, setAccountBalance] = useState("");
-  const [link, setLink] = useState(`http://localhost:3000/SignUp?walletAddress=${currentAccount}`);
+  const [link, setLink] = useState(`http://185.193.126.26:3000/SignUp?walletAddress=${currentAccount}`);
   // const [link, setLink]= useState("");
 
 
@@ -103,7 +103,7 @@ const Content = ({ logindata }) => {
 
   // code to delete account 
   // const deleteAccount = () => {
-  //   axios.post('http://localhost:8080/account/delete', logindata, { withCredentials: true, })
+  //   axios.post('http://185.193.126.26:8080/account/delete', logindata, { withCredentials: true, })
   //     .then(response => {
   //       // Handle the response data
   //       console.log(response.data, "deleted dataata");
@@ -130,7 +130,7 @@ const Content = ({ logindata }) => {
   // const changePassword = (e) => {
   //   e.preventDefault();
   //   console.log(newpassword, "newpassword");
-  //   axios.post('http://localhost:8080/account/password', newpassword, { withCredentials: true, })
+  //   axios.post('http://185.193.126.26:8080/account/password', newpassword, { withCredentials: true, })
 
   //     .then(response => {
   //       // Handle the response data
@@ -202,7 +202,7 @@ const Content = ({ logindata }) => {
 
  
   useEffect(() => {
-    setLink(`http://localhost:3000/SignUp?walletAddress=${currentAccount}`)
+    setLink(`http://185.193.126.26:3000/SignUp?walletAddress=${currentAccount}`)
   }, [currentAccount])
 
 

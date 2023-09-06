@@ -43,8 +43,15 @@ const passportConfig = require('./config/passport');
 /**
  * Create Express server.
  */
-const app = express();
+//const app = express();
 // app.use(cors());
+const app = express();
+
+// Allow requests from your frontend domain
+app.use(cors({
+  origin: 'http://185.193.126.26:3000',
+  credentials: true,  // If you're using cookies or sessions
+}));
 
 /**
  * Connect to MongoDB.
@@ -54,7 +61,7 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useUnifiedTopology', true);
-mongoose.connect('mongodb+srv://rehanshahjahan98:sghgshgdhgsadgsdg1234@cluster0.fpuhorb.mongodb.net/coinflip');
+mongoose.connect('mongodb://127.0.0.1:27017/coinflip');
 mongoose.connection.on('error', (err) => {
   console.error(err);
   console.log('%s MongoDB connection error. Please make sure MongoDB is running.', chalk.red('✗'));
@@ -73,6 +80,13 @@ app.use(cors({
   credentials: true
 }))
 
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://185.193.126.26:3000'); // Replace with your frontend's URL
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});
+
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -82,7 +96,7 @@ app.use(session({
   secret: process.env.SESSION_SECRET,
   cookie: { maxAge: 1209600000 }, // two weeks in milliseconds
   store: new MongoStore({
-    url: 'mongodb+srv://rehanshahjahan98:sghgshgdhgsadgsdg1234@cluster0.fpuhorb.mongodb.net/coinflip',
+    url: 'mongodb://127.0.0.1:27017/coinflip',
     autoReconnect: true,
   })
 }));
@@ -126,6 +140,7 @@ app.post('/signup', userController.postSignup);
 app.get('/contact', contactController.getContact);
 app.get('/contact', contactController.getContact);
 app.post('/contact', contactController.postContact);
+app.options('*', cors()); // Handle preflight requests for all routes
 
 app.get('/about', homeController.about);
 
@@ -188,12 +203,18 @@ if (process.env.NODE_ENV === 'development') {
   });
 }
 
+app.use(cors());
+
 /**
  * Start Express server.
- */
-app.listen(app.get('port'), () => {
+*/
+
+app.listen(8080, () => {
+  console.log('Server is running on port 8080');
+});
+/**app.listen(app.get('port'), () => {
   console.log('%s App is running at http://localhost:%d in %s mode', chalk.green('✓'), app.get('port'), app.get('env'));
   console.log('  Press CTRL-C to stop\n');
-});
+});*/
 
 module.exports = app;

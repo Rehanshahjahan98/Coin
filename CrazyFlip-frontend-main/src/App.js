@@ -26,7 +26,7 @@ function App() {
           <Route path="/lottery" element={<Lottery />} />
           <Route path="/casino" element={<Lottery />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<Signup />} />
+          <Route path="/SignUp" element={<Signup />} />
           <Route path="/dashboard" element={<DashBoard />} />
           <Route path="/ForgotPassword" element={<ForgotPassword/>}/>
 

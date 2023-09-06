@@ -56,7 +56,7 @@ const [accountBalance, setAccountBalance] = useState("");
     data.walletAddress = currentAccount;
 
     
-    axios.post('http://localhost:8080/login', data, { withCredentials: true, })
+   axios.post('http://185.193.126.26:8080/login', data, { withCredentials: true, })
       .then(response => {
         // Handle the response data
         // console.log(response.data, "dataata");
