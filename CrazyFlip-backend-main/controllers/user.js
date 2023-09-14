@@ -375,38 +375,11 @@ exports.getVerifyEmailToken = (req, res, next) => {
 exports.addAffliate = async (req, res, next) => {
   try {
     const { referredAddress, affiliateAddress } = req.body;
-    if (!referredAddress || !affiliateAddress) {
-      return res.status(400).json({
-        success: false,
-        message: '',
-        err: "referredAddress and affiliateAddress must exist"
-      });
-    }
-
-    const isAffiliateUserExist = await User.findOne({ walletAddress: affiliateAddress });
-    if (!isAffiliateUserExist) {
-      const isReferredUserExist = await User.findOne({ walletAddress: referredAddress });
-      if (isReferredUserExist) {
-        await addAffliateToContract({ referredAddress, affiliateAddress });
-        return res.status(200).json({
-          success: true,
-          message: 'Success',
-        });
-      } else {
-        return res.status(400).json({
-          success: false,
-          message: '',
-          err: "No user found with referred wallet Address"
-        });
-      }
-    } else {
-      return res.status(400).json({
-        success: false,
-        message: '',
-        err: "You already have account with this wallet address"
-      });
-    }
-
+    await addAffliateToContract({ referredAddress, affiliateAddress });
+    return res.status(200).json({
+      success: true,
+      message: 'Success',
+    });
   } catch (error) {
     console.log("error message : ", error)
   }

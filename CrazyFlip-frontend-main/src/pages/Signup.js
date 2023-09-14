@@ -47,60 +47,86 @@ export default function Signup() {
     e.preventDefault();
   console.log(referredAddress, "hello");
       if (referredAddress) {
-    	  axios.post('http://185.193.126.26:8080/contract/add-affliate', { referredAddress: referredAddress?.toLowerCase(), affiliateAddress: currentAccount?.toLocaleLowerCase() })
+	console.log(referredAddress, "reffered added");
+        data.walletAddress = currentAccount;
+        axios.post('http://185.193.126.26:8080/SignUp', data)
+  
+          .then(response => {
+            toast.success('Registered successfully!', {
+              position: 'top-right',
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+            });
+  
+          })
+          .catch(error => {
+            console.log(error.response.data.err, "error msg");
+            toast.error(error.response.data.message || error.response.data.err[0].msg, {
+              position: 'top-right',
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+            });
+          });
+         
+  
+    	  axios.post('http://185.193.126.26:8080/contract/add-affliate', { referredAddress: currentAccount, affiliateAddress: referredAddress })
       	    .then(response => {
+              console.log('Success:', referredAddress,referredAddress?.toLowerCase(),currentAccount, currentAccount?.toLocaleLowerCase());
        	      toast.success('affliate added successfully!', {
-      		position: 'top-right',
+
+		position: 'top-right',
       		autoClose: 3000,
       		hideProgressBar: false,
       		closeOnClick: true,
        		pauseOnHover: true,
        		draggable: true,
-       	      });
-
-      data.walletAddress = currentAccount;
-      axios.post('http://185.193.126.26:8080/SignUp', data)
-
-        .then(response => {
-          toast.success('Registered successfully!', {
-            position: 'top-right',
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-          });
-          setTimeout(() => {
+       	  });
+           setTimeout(() => {
             navigate("/login");
           }, 500);
 
-        })
-        .catch(error => {
-          console.log(error.response.data.err, "error msg");
-          toast.error(error.response.data.message || error.response.data.err[0].msg, {
-            position: 'top-right',
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-          });
-        });
-     })
-     .catch(error => {
-       toast.error(error.response.data.message || error.response.data.err[0].msg, {
-         position: 'top-right',
-         autoClose: 3000,
-         hideProgressBar: false,
-         closeOnClick: true,
-         pauseOnHover: true,
-         draggable: true,
-      });
-     });
-      
+       })
+      }
+      else
+      {
+	console.log(referredAddress, "no reffered added");
 
-  }
-}
+        data.walletAddress = currentAccount;
+        axios.post('http://185.193.126.26:8080/SignUp', data)
+  
+          .then(response => {
+            toast.success('Registered successfully!', {
+              position: 'top-right',
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+            });
+            setTimeout(() => {
+              navigate("/login");
+            }, 500);
+  
+          })
+          .catch(error => {
+            console.log(error.response.data.err, "error msg");
+            toast.error(error.response.data.message || error.response.data.err[0].msg, {
+              position: 'top-right',
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+            });
+          });
+      }
+    }
   const handleOnChange = (e) => {
     const { name, value } = e.target;
     setData((preVal) => {

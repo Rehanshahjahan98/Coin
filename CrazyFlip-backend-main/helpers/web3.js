@@ -7,7 +7,6 @@ const infuraUrl =
   "https://eth-sepolia.g.alchemy.com/v2/5R5mOr7D3Xes8emZgWrKt8xsaNFl6yUE";
 
 
-
 const addAffliateToContract = async ({ referredAddress, affiliateAddress }) => {
   try {
     let web3 = new Web3(infuraUrl);

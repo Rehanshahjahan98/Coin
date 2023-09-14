@@ -46,7 +46,7 @@ const [accountBalance, setAccountBalance] = useState("");
   const navigate = useNavigate();
 
   const handleSignUp = () => {
-    navigate("/register");
+    navigate("/SignUp");
   };
 
 
