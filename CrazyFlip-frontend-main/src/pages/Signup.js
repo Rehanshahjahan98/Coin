@@ -45,6 +45,7 @@ export default function Signup() {
 
   const createAccount = (e) => {
     e.preventDefault();
+    const loader = document.getElementById('loader');
   console.log(referredAddress, "hello");
       if (referredAddress) {
 	console.log(referredAddress, "reffered added");
@@ -60,7 +61,7 @@ export default function Signup() {
               pauseOnHover: true,
               draggable: true,
             });
-  
+	   
           })
           .catch(error => {
             console.log(error.response.data.err, "error msg");
@@ -72,9 +73,10 @@ export default function Signup() {
               pauseOnHover: true,
               draggable: true,
             });
+	    
           });
          
-  
+          
     	  axios.post('http://185.193.126.26:8080/contract/add-affliate', { referredAddress: currentAccount, affiliateAddress: referredAddress })
       	    .then(response => {
               console.log('Success:', referredAddress,referredAddress?.toLowerCase(),currentAccount, currentAccount?.toLocaleLowerCase());
@@ -182,6 +184,7 @@ export default function Signup() {
 
   return (
     <>
+
       <div className="signup-page">
         <img src={Sidelogo} alt="Hopiumbet-logo" id="side-logo" />
         <div className="signup-form-container">
