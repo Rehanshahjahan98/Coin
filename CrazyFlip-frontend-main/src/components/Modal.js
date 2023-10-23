@@ -1,5 +1,5 @@
 import React from 'react';
-import LinkImage from '../assets/Link.png'; // Import your image
+import LinkImage from '../assets/Link1.png'; // Import your image
 import { Modal, Button, Image } from 'react-bootstrap';
 
 const overlayStyle = {
@@ -12,10 +12,10 @@ const linkStyle = {
   bottom: '0',
   left: '10',
   width: '100%',
-  backgroundColor: 'rgba(0, 0, 0, 0.7)',
+  backgroundColor: 'rgba(0, 0, 0, 0)',
   color: 'white',
   textAlign: 'center',
-  padding: '2px',
+  padding: '36px',
 };
 
 
