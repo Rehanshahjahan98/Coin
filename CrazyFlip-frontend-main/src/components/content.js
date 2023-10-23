@@ -217,18 +217,18 @@ const Content = ({ logindata }) => {
 
         <ul className="ps-5" style={{ listStyleType: "none", color: "white" }}>
           <li style={{ color: state === 1 ? "orange" : "white" }} className="mb-4 fw-bold" onClick={() => { setState(1); setMenuStatus("open"); setStyle("menu"); }}>MY ACCOUNT</li>
-          <li style={{ color: state === 2 ? "orange" : "white" }} className="mb-4 fw-bold" onClick={() => { setState(2); setMenuStatus("open"); setStyle("menu"); }}>AFFILLIATES</li>
+          <li style={{ color: state === 2 ? "orange" : "white" }} className="mb-4 fw-bold" onClick={() => { setState(2); setMenuStatus("open"); setStyle("menu"); }}>AFFILIATES</li>
           <li style={{ color: state === 3 ? "orange" : "white" }} className="mb-3 fw-bold" onClick={() => { setState(3); setMenuStatus("open"); setStyle("menu"); }}>TRANSACTIONS</li>
         </ul>
 
         <div className="menu-bottom">
-          <div className="logout_btn_div w-80 m-auto">
+          <div className="logout_btn_div w-80">
             <div className="">
               <LogoutButton />
             </div>
             <div>
               <NavLink to="/casino">
-                <button type="button" style={{ borderColor: "transparent" }} className="bg-transparent mt-0 ps-0 text-white fs-5 btn btn-primary logout_btn">
+                <button type="button" style={{ borderColor: "transparent" }} className="bg-transparent mt-0 text-white fs-5 btn btn-primary logout_btn">
                   BACK TO CASINO
                 </button>
               </NavLink>
@@ -241,7 +241,7 @@ const Content = ({ logindata }) => {
         <div className='position-relative pt-5 menu_div' style={{ width: "20%", background: "#553b6e" }}>
           <ul className="ps-5" style={{ listStyleType: "none", color: "white" }}>
             <li style={{ color: state === 1 ? "orange" : "white" }} className="mb-4 fw-bold" onClick={() => { setState(1); setColor("yellow") }}>MY ACCOUNT</li>
-            <li style={{ color: state === 2 ? "orange" : "white" }} className="mb-4 fw-bold" onClick={() => setState(2)}>AFFILLIATES</li>
+            <li style={{ color: state === 2 ? "orange" : "white" }} className="mb-4 fw-bold" onClick={() => setState(2)}>AFFILIATES</li>
             <li style={{ color: state === 3 ? "orange" : "white" }} className="mb-3 fw-bold" onClick={() => setState(3)}>TRANSACTIONS</li>
           </ul>
           <div className='menu-bottom'>

@@ -170,7 +170,7 @@ useEffect(() => {
             onChange={(e)=>handleOnChange(e)}
             className="input-field"
             type="text"
-            placeholder="email"
+            placeholder="Email"
             name="email"
           />
         </div>
@@ -198,7 +198,7 @@ useEffect(() => {
         </button>
         <div className="line-container">
           <div className="radio-container">
-            <h2 style={{ fontWeight: "600", color: "#fff", }}>
+            <h2 style={{ fontWeight: "540", color: "#fff", }}>
               Don’t have an account?
             </h2>
           </div>

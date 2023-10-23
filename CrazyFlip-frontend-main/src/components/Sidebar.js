@@ -10,9 +10,9 @@ const Sidebar = () => {
   };
 
   const navLinks = [
-    { title: "Casino", path: "/casino", pageName: "/casino" },
     { title: "CoinFlip", path: "/flipcoin", pageName: "/flipcoin" },
     { title: "Lottery", path: "/lottery", pageName: "/lottery" },
+    { title: "Casino", path: "/casino", pageName: "/casino" },
   ];
 
   return (

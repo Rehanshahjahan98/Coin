@@ -1,8 +1,27 @@
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import React from 'react';
+import LinkImage from '../assets/Link.png'; // Import your image
+import { Modal, Button, Image } from 'react-bootstrap';
 
-function MyVerticallyCenteredModal(props) {
-  const { link, show, onHide } = props;
+const overlayStyle = {
+  position: 'relative',
+  width: '100%',
+};
+
+const linkStyle = {
+  position: 'absolute',
+  bottom: '0',
+  left: '10',
+  width: '100%',
+  backgroundColor: 'rgba(0, 0, 0, 0.7)',
+  color: 'white',
+  textAlign: 'center',
+  padding: '2px',
+};
+
+
+function MyVerticallyCenteredModal(props){
+  const { show, onHide, link } = props;
+
   return (
     <Modal
       {...props}
@@ -11,19 +30,17 @@ function MyVerticallyCenteredModal(props) {
       centered
       className=''
     >
-      <Modal.Header closeButton>
-        <Modal.Title className='m-auto' style={{ letterSpacing: "1px" }} id="contained-modal-title-vcenter">
-          Below is your generated link
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-
-        <a target='_' href="">{link}</a>
+      <Modal.Body style={{ padding: 0 }}>
+        <div style={overlayStyle}>
+          <img src={LinkImage} alt="Link" style={{ width: '100%' }} />
+          <div style={linkStyle}>
+            <a target='_blank' href={link}>
+              {link}
+            </a>
+          </div>
+        </div>
       </Modal.Body>
-      <Modal.Footer>
-        <Button className='bg-warning' onClick={props.onHide}>Close</Button>
-      </Modal.Footer>
     </Modal>
   );
 }
-export default MyVerticallyCenteredModal
+export default MyVerticallyCenteredModal;

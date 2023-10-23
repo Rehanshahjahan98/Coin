@@ -188,7 +188,9 @@ export default function Signup() {
       <div className="signup-page">
         <img src={Sidelogo} alt="Hopiumbet-logo" id="side-logo" />
         <div className="signup-form-container">
-          <h2 className="dotH2">Become an Affiliate</h2>
+	<h2 id="aff-network-h2">
+          <em> Affiliate Network </em>
+        </h2>
           <h3 className="dotH3">
             Create an account to view your Affiliate activity
           </h3>
