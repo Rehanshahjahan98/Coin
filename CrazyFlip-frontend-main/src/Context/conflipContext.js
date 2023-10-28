@@ -20,8 +20,10 @@ const connectingWithSmartContract = async () => {
 	try {
 		const web3Modal = new Web3Modal();
 		const connection = await web3Modal.connect();
+		console.log("check");
 		if (!connection) {
 			throw new Error("Connection modal closed by user");
+                    
 		}
 		const provider = new ethers.providers.Web3Provider(connection);
 		const signer = provider.getSigner();
@@ -75,6 +77,9 @@ export const CoinFlipProvider = ({ children }) => {
 	useEffect(() => {
 		getLastPlays();
 	});
+	const disconnectWallet = () => {
+	  setCurrentAccount("");
+	};
 
 	//---CONNECT WALLET FUNCTION
 	const connectWallet = async () => {
@@ -214,6 +219,7 @@ export const CoinFlipProvider = ({ children }) => {
 			value={{
 				checkIfWalletConnected,
 				connectWallet,
+				disconnectWallet,
 				currentAccount,
 				runBet,
 				trxHistory,

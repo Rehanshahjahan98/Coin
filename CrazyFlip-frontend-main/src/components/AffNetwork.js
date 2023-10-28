@@ -16,22 +16,7 @@ const fetchContract = (signerOrProvider) =>
     coinFlipABI,
     signerOrProvider
   );
-  const connectingWithSmartContract = async () => {
-    try {
-      const web3Modal = new Web3Modal();
-      const connection = await web3Modal.connect();
-      if (!connection) {
-        throw new Error("Connection modal closed by user");
-      }
-      const provider = new ethers.providers.Web3Provider(connection);
-      const signer = provider.getSigner();
-      const contract = fetchContract(signer);
-      return [signer, contract];
-    } catch (error) {
-      console.log("Something went wrong while connecting with contract", error);
-      throw error;
-    }
-  };
+ 
 
 export default function AffNetwork() {
   
@@ -122,6 +107,46 @@ const handleOnChange = (e)=>{
 }
 // console.log(data, "datatata string");
 
+const connectingWithSmartContract = async () => {
+  try {
+    const web3Modal = new Web3Modal();
+    const connection = await web3Modal.connect();
+
+    if (!connection) {
+      throw new Error('Modal closed by user');
+      console.log("yesyes");
+    }
+
+    const provider = new ethers.providers.Web3Provider(connection);
+    const signer = provider.getSigner();
+    const contract = fetchContract(signer);
+    return [signer, contract];
+  } catch (error) {
+    if (error.message == 'Modal closed by user') {
+      toast.error('Connection modal closed by user', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+    } else {
+      // Handle other types of errors here
+      toast.error('Something went wrong while connecting with the contract', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+    }
+    console.error('Error in connectingWithSmartContract:', error);
+    throw error;
+  }
+};
+
 const checkIfWalletConnected = async () => {
   try {
     console.log("In Check");
@@ -147,7 +172,6 @@ const checkIfWalletConnected = async () => {
     setError("Something wrong while connecting to wallet");
   }
 };
-
 useEffect(() => {
   checkIfWalletConnected();
 }, []);

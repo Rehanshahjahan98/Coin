@@ -1,6 +1,7 @@
 import React from 'react';
-import LinkImage from '../assets/Link1.png'; // Import your image
+import LinkImage from '../assets/Banner.png'; // Import your image
 import { Modal, Button, Image } from 'react-bootstrap';
+import { FaTimes } from 'react-icons/fa';
 
 const overlayStyle = {
   position: 'relative',
@@ -15,11 +16,11 @@ const linkStyle = {
   backgroundColor: 'rgba(0, 0, 0, 0)',
   color: 'white',
   textAlign: 'center',
-  padding: '36px',
+  padding: '16px',
 };
 
 
-function MyVerticallyCenteredModal(props){
+function  MyVerticallyCenteredModal(props) {
   const { show, onHide, link } = props;
 
   return (
@@ -31,6 +32,13 @@ function MyVerticallyCenteredModal(props){
       className=''
     >
       <Modal.Body style={{ padding: 0 }}>
+        <button
+          className='close-icon'
+	  onClick = {onHide}
+         
+        >
+          <FaTimes />
+        </button>
         <div style={overlayStyle}>
           <img src={LinkImage} alt="Link" style={{ width: '100%' }} />
           <div style={linkStyle}>

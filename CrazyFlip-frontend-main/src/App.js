@@ -1,4 +1,6 @@
 import "./App.css";
+import React, { useEffect } from 'react';
+import { toast } from 'react-toastify';
 import Signup from "./pages/Signup";
 import Homepage from "./pages/Homepage";
 import Flippage from "./pages/Flippage";
@@ -13,6 +15,7 @@ function App() {
   const yourOnChangeFunction = (selectedValue) => {
     console.log(selectedValue);
   };
+  
 
   return (
     <CoinFlipProvider>

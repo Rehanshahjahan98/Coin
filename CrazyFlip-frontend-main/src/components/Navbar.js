@@ -45,9 +45,9 @@ const Navbar = (props) => {
                 FAQ
               </button>
               {currentAccount ? (
-                <span className="small-btn shorten-string">
+                <button className="small-btn shorten-string" onClick={toggleConnectPopup}>
                   {shortenString}
-                </span>
+                </button>
               ) : (
                 <button className="small-btn" onClick={toggleConnectPopup}>
                   Connect

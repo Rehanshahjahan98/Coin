@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Popover } from "react-bootstrap";
+import discord from '../assets/discord.png';
 import kid from "../images/kid.png";
 import { Icon } from '@iconify/react';
 import { toast, ToastContainer } from 'react-toastify';
@@ -25,15 +26,37 @@ const connectingWithSmartContract = async () => {
   try {
     const web3Modal = new Web3Modal();
     const connection = await web3Modal.connect();
+
     if (!connection) {
-      throw new Error("Connection modal closed by user");
+      throw new Error('Connection modal closed by user');
     }
+
     const provider = new ethers.providers.Web3Provider(connection);
     const signer = provider.getSigner();
     const contract = fetchContract(signer);
     return [signer, contract];
   } catch (error) {
-    console.log("Something went wrong while connecting with contract", error);
+    if (error.message === 'Connection modal closed by user') {
+      toast.error('Connection modal closed by user', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+    } else {
+      // Handle other types of errors here
+      toast.error('Something went wrong while connecting with the contract', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+    }
+    console.error('Error in connectingWithSmartContract:', error);
     throw error;
   }
 };
@@ -302,17 +325,17 @@ const MyAccount = ({ logindata }) => {
         <h4>Delete Account</h4>
         <p>
           {" "}
-          You can delete your account, but keep in mind this section is
-          irreversible.
+          If you want to delete your account - Chat with us on the discord by clicking below.
         </p>
-        <button
-          onClick={deleteAccount}
-          style={{ width: "170px" }}
-          type="button"
-          className=" bg-white text-black btn btn-primary p-1 pt-0 pb-0"
-        >
-          Delete my account
-        </button>
+        <h3 id='chat-Btn'>
+	  <span style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', display: 'inline-block', padding: '5px', borderRadius: '5px' }}>
+	    <img src={discord} alt='metamask-logo' className='metamask-logo' style={{ marginRight: '10px' }}/>
+	    <a href='https://discord.gg/RjAvVnDMAS' target='_blank' rel='noreferrer'>
+      	       Chat with us on discord
+	    </a>
+	  </span>
+	</h3>
+
       </div>
     </div>
   )

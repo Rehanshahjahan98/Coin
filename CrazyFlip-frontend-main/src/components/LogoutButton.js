@@ -49,8 +49,13 @@ const LogoutButton = () => {
   };
 
   return (
-    <button onClick={handleLogout} style={{borderColor:"transparent",}} type="button"  className="bg-transparent text-white fs-5 btn pb-0 p-0 btn-primary logout_btn">
-         LOG OUT
+    <button onClick={handleLogout} style={{
+    margin: "0",
+    padding: "0",
+    paddingTop: "0",
+    marginTop: "0"
+  }} type="button"  className="bg-transparent text-white fs-15 btn pb-0 p-0 btn-primary logout_btn">
+         AFFILIATE LOG OUT
      </button> 
   );
 };

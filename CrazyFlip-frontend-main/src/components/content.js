@@ -27,15 +27,37 @@ const connectingWithSmartContract = async () => {
   try {
     const web3Modal = new Web3Modal();
     const connection = await web3Modal.connect();
+
     if (!connection) {
-      throw new Error("Connection modal closed by user");
+      throw new Error('Connection modal closed by user');
     }
+
     const provider = new ethers.providers.Web3Provider(connection);
     const signer = provider.getSigner();
     const contract = fetchContract(signer);
     return [signer, contract];
   } catch (error) {
-    console.log("Something went wrong while connecting with contract", error);
+    if (error.message === 'Connection modal closed by user') {
+      toast.error('Connection modal closed by user', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+    } else {
+      // Handle other types of errors here
+      toast.error('Something went wrong while connecting with the contract', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+    }
+    console.error('Error in connectingWithSmartContract:', error);
     throw error;
   }
 };
@@ -245,18 +267,24 @@ const Content = ({ logindata }) => {
             <li style={{ color: state === 3 ? "orange" : "white" }} className="mb-3 fw-bold" onClick={() => setState(3)}>TRANSACTIONS</li>
           </ul>
           <div className='menu-bottom'>
-            <div className='w-80 m-auto'>
-              <div className=''>
-
-                <LogoutButton />
-              </div>
+            <div className='w-80 m-left'>
               <div>
-                <NavLink to="/casino">
-                  <button type="button" style={{ borderColor: "transparent" }} className="bg-transparent mt-0 text-white fs-5 btn btn-primary logout_btn">
-                    BACK TO CASINO
+                <NavLink to="/flipcoin">
+                  <button type="button" style={{
+		    margin: "100",
+		    padding: "80",
+		    paddingTop: "50",
+		    marginTop: "80"
+		  }} className="bg-transparent mt-0 text-white fs-15 btn btn-primary logout_btn">
+                    BACK TO COINFLIP
                   </button>
                 </NavLink>
+              
+	        <div className=''>
+                  <LogoutButton />
+                </div>
               </div>
+
             </div>
           </div>
         </div>
