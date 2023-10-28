@@ -11,8 +11,8 @@ const Sidebar = () => {
 
   const navLinks = [
     { title: "CoinFlip", path: "/flipcoin", pageName: "/flipcoin" },
-    { title: "Lottery", path: "/lottery", pageName: "/lottery" },
-    { title: "Casino", path: "/casino", pageName: "/casino" },
+    { title: ( <span> Lottery - <span style={{ fontSize: 'smaller', color: 'orange' }}>Coming soon</span> </span>), path: "/lottery", pageName: "/lottery" },
+    { title: ( <span> Casino - <span style={{ fontSize: 'smaller', color: 'orange' }}>Coming soon</span> </span>), path: "/casino", pageName: "/casino" },
   ];
 
   return (

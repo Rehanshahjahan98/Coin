@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Navbar from "../components/Navbar";
 import "./Signup.css";
 import Sidelogo from "../assets/side-logo.png";
 import axios from 'axios';
@@ -184,7 +185,10 @@ export default function Signup() {
 
   return (
     <>
-
+      <div className="navbar">
+        <Navbar />
+      </div>
+      <div style={{ marginBottom: "50px" }}></div>
       <div className="signup-page">
         <img src={Sidelogo} alt="Hopiumbet-logo" id="side-logo" />
         <div className="signup-form-container">

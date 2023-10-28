@@ -73,33 +73,43 @@ const [accountBalance, setAccountBalance] = useState("");
         }, 500);
       })
       .catch(error => {
-        // Handle any error that occurred during the request
-        if (error.response.data.err.length > 0) {
-          for(let i=0; i<error.response.data.err.length; i++){
-        // console.log(error.response.data.err[i].msg, "errrrrrrrrr");
-    
-            toast.error(error.response.data.err[i].msg , {
-              position: 'top-right',
-              autoClose: 3000, // Time in milliseconds before the toast auto-closes
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-            });
-          }
-        } else{
-          toast.error(error.response.data.message || error.response.data.err.msg , {
-            position: 'top-right',
-            autoClose: 3000, // Time in milliseconds before the toast auto-closes
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-           
-          });
-        }
-      });
-      }
+	  if (error.response && error.response.data && error.response.data.err) {
+	    if (Array.isArray(error.response.data.err) && error.response.data.err.length > 0) {
+	      for (let i = 0; i < error.response.data.err.length; i++) {
+	        toast.error(error.response.data.err[i].msg, {
+	          position: 'top-right',
+	          autoClose: 3000,
+	          hideProgressBar: false,
+	          closeOnClick: true,
+	          pauseOnHover: true,
+	          draggable: true,
+	        });
+	      }
+	    } else {
+	      toast.error(error.response.data.message || error.response.data.err.msg, {
+	        position: 'top-right',
+	        autoClose: 3000,
+	        hideProgressBar: false,
+	        closeOnClick: true,
+	        pauseOnHover: true,
+	        draggable: true,
+	      });
+	    }
+	  } else {
+	    // Display a custom error message for other types of errors
+	    toast.error("Please enter your email and password to log in.", {
+	      position: 'top-right',
+	      autoClose: 3000,
+	      hideProgressBar: false,
+	      closeOnClick: true,
+	      pauseOnHover: true,
+	      draggable: true,
+	    });
+	    console.error(error);
+	  }
+	});
+
+    }
 
 
 const handleOnChange = (e)=>{
@@ -198,7 +208,7 @@ useEffect(() => {
         </button>
         <div className="line-container">
           <div className="radio-container">
-            <h2 style={{ fontWeight: "540", color: "#fff", }}>
+            <h2 style={{ fontWeight: "540", color: "#fff", paddingTop: "20px" }}>
               Don’t have an account?
             </h2>
           </div>
