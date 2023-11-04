@@ -17,7 +17,7 @@ const Affilliates = ({logindata}) => {
       const localizedString = updatedAtDate.toLocaleString(undefined, options);
   return (
     <div className='affilliate_mai_div'>
-        <h3 className="text-center myAccount mt-5 border-0" style={{letterSpacing:"1px", marginBottom:"80px"}}>Affilliates</h3>
+        <h3 className="text-center myAccount mt-5 border-0" style={{letterSpacing:"1px", marginBottom:"80px"}}>Your Affiliates</h3>
 
         <div className='overflowX-auto'>
         <Row className='text-start px-2 g-0'>

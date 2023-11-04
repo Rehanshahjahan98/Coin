@@ -321,7 +321,7 @@ const MyAccount = ({ logindata }) => {
         </div>
       </div>
 
-      <div className="ps-4 ps-md-1">
+     {/* <div className="ps-4 ps-md-1">
         <h4>Delete Account</h4>
         <p>
           {" "}
@@ -336,7 +336,7 @@ const MyAccount = ({ logindata }) => {
 	  </span>
 	</h3>
 
-      </div>
+      </div> */}
     </div>
   )
 }

@@ -5,13 +5,28 @@
   height: 100vh;
   position: relative;
 }
+.section-button {
+  background-color: #f2f2f2;
+  color: orange; 
+  border: 1px solid #ddd; 
+  padding: 10px 20px; 
+  margin: 40px 50px; 
+  cursor: pointer; 
+  border-radius: 5px; 
+}
+
+.section-button.active {
+  background-color: #007BFF;
+  color: #fff; 
+  border: 1px solid #007BFF; 
+}
 
 .pop-up-container {
   color: white;
   text-transform: uppercase;
   width: 80%;
-  max-width: 600px;
-  padding: 20px;
+  max-width: 2000px;
+  padding: 40px;
   background: url('../assets/bg.png');
   background-size: cover;
   background-position: center;
@@ -34,6 +49,11 @@
   max-width: 200px;
 }
 
+.logo-discord {
+  width: 50%;
+  max-width: 70px;
+}
+
 .faq {
   color: orange;
   margin-bottom: 15px;
@@ -41,9 +61,22 @@
   font-weight: bold;
 }
 
+.title {
+  color: orange;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.centered-title {
+  text-align: center;
+  margin-bottom: -10px;
+}
+
 .white {
   color: white;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
 }
 

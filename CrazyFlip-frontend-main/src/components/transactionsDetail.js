@@ -41,7 +41,7 @@ const TransactionsDetail = () => {
   console.log(transactionsData, "transactionsDatatransactionsData")
   return (
     <div className='transaction_details'>
-      <h3 className="text-center myAccount mt-5 border-0" style={{ letterSpacing: "1px", marginBottom: "80px" }}>TRANSACTIONS</h3>
+      <h3 className="text-center myAccount mt-5 border-0" style={{ letterSpacing: "1px", marginBottom: "80px" }}>YOUR AFFILIATE TRANSACTIONS</h3>
 
       {/* <Row className='text-center m-0 g-0 justify-content-center transaction-row'>
         <Col xs={2}>

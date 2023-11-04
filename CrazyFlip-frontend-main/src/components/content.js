@@ -267,15 +267,14 @@ const Content = ({ logindata }) => {
             <li style={{ color: state === 3 ? "orange" : "white" }} className="mb-3 fw-bold" onClick={() => setState(3)}>TRANSACTIONS</li>
           </ul>
           <div className='menu-bottom'>
-            <div className='w-80 m-left'>
-              <div>
+            <div className='w-80 m-left d-flex align-items-center'>
+              <div className="col-11">
                 <NavLink to="/flipcoin">
                   <button type="button" style={{
-		    margin: "100",
-		    padding: "80",
-		    paddingTop: "50",
-		    marginTop: "80"
-		  }} className="bg-transparent mt-0 text-white fs-15 btn btn-primary logout_btn">
+		    margin: "5px",
+  		    padding: "5px 10px",
+		    whiteSpace: "nowrap",
+		  }} className="bg-transparent mb-4 fw-bold text-white btn btn-primary logout_btn">
                     BACK TO COINFLIP
                   </button>
                 </NavLink>
