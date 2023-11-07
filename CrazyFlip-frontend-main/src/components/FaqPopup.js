@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import Navbar from "../components/Navbar";
 import './FaqPopup.css';
+import Sidebar from "../components/Sidebar";
 import './ConnectPopup.css';
 import discord from '../assets/discord.png';
 import logo from '../assets/side-logo.png';
@@ -71,7 +73,18 @@ const FaqPopup = ({ onClose }) => {
       questions: [
         {
           question: 'Where can I find information about $HOPIUMBET Tokenomics?',
-          answer: 'On our Tokenomics channel on our Discord server here.',
+          answer: (
+            <div>
+              On our Tokenomics channel on our Discord server :
+              <h3 id='chat-Btn'>
+                <img src={discord} alt='discord-logo' className='logo-discord' />
+                <a href='https://discord.gg/RjAvVnDMAS' target='_blank' rel='noreferrer'>
+                  Chat with us on Discord &#5171; &#5171;
+
+                </a>
+              </h3>
+            </div>
+          ),
         },
         {
           question: 'How can I get $HOPIUMBET tokens?',
@@ -88,63 +101,76 @@ const FaqPopup = ({ onClose }) => {
   const handleSectionChange = (newSection) => {
     setSection(newSection);
   };
-
   return (
+   <>
+    <Sidebar />
+    <div className="navbar">
+        <Navbar />
+      </div>
     <div className='main-container'>
-      <div className='pop-up-container'>
-        <button
-          className='close-icon'
-          onClick={onClose}
-        >
-          <FaTimes />
-        </button>
-        <img
-          src={logo}
-          alt='logo'
-          className='logo'
-        />
-        <div className='content'>
-          <div className='buttons'>
-	    <button
-	      className={`section-button ${section === 'general' ? 'active' : ''}`}
-	      onClick={() => handleSectionChange('general')}
-	    >
-	      General FAQ
-	    </button>
-	    <button
-	      className={`section-button ${section === 'affiliate' ? 'active' : ''}`}
-	      onClick={() => handleSectionChange('affiliate')}
-	    >
-	      Affiliate Network FAQ
-	    </button>
-	    <button
-	      className={`section-button ${section === 'token' ? 'active' : ''}`}
-	      onClick={() => handleSectionChange('token')}
-	    >
-	      Token FAQ
-	    </button>
-	  </div>
-          <div className='faq'>
+              
+      <main>
+        
+        <div className='faq'>
+               
             <div className='centered-title'>
-	      <span className='title'>{content[section].title}</span>
+	            <span className='title'>{content['general'].title}</span>
             </div>
-	    <br />
-            {content[section].questions.map((qna, index) => (
+	          <br />
+            {content["general"].questions.map((qna, index) => (
               <div key={index}>
                 <span className='orange'>{qna.question}</span>
                 <br />
                 <span className='white'>{qna.answer}</span>
                 <br />
-		<br />
+		            
+	
+              </div>
+            ))}
+            <div className='centered-title'>
+                 <br />
+                 <br />
+
+	            <span className='title'>{content['affiliate'].title}</span>
+            </div>
+	          <br />
+            {content['affiliate'].questions.map((qna, index) => (
+              <div key={index}>
+                <span className='orange'>{qna.question}</span>
+                <br />
+                <span className='white'>{qna.answer}</span>
+                <br />
+		            
+	
+              </div>
+            ))}
+            <div className='centered-title'>
+                  <br />
+		  <br />
+
+	            <span className='title'>{content['token'].title}</span>
+            </div>
+	          <br />
+            {content['token'].questions.map((qna, index) => (
+              <div key={index}>
+                <span className='orange'>{qna.question}</span>
+                <br />
+                <span className='white'>{qna.answer}</span>
+                <br />
+		            
 	
               </div>
             ))}
           </div>
-        </div>
-      </div>
+
+      </main>
+
+      <footer>
+        {/* Add footer content here if needed */}
+      </footer>
     </div>
+  </>
   );
 };
 
 export default FaqPopup;
-

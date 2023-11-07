@@ -1,10 +1,21 @@
 .main-container {
+ 
+  background: url('../assets/bg.png');
+  background-size: cover;
+  width: 100%;
   display: flex;
-  justify-content: center;
+  min-height: 100vh;
+  display: flex;
   align-items: center;
-  height: 100vh;
-  position: relative;
+  justify-content: center;
+  flex-direction: column;
 }
+
+.scrollable-content {
+  max-height: 300px; /* Adjust the max height as needed */
+  overflow-y: auto;
+}
+
 .section-button {
   background-color: #f2f2f2;
   color: orange; 
@@ -57,8 +68,12 @@
 .faq {
   color: orange;
   margin-bottom: 15px;
-  font-size: 20px;
+  margin-left: 300px;
+  margin-right: 350px;
+  font-size: 23px;
   font-weight: bold;
+  margin-top: 100px;
+  margin-bottom: 200px;
 }
 
 .title {
@@ -115,3 +130,4 @@
     font-size: 16px;
   }
 }
+

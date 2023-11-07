@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useEffect } from 'react';
 import { toast } from 'react-toastify';
+import FaqPage from "./components/FaqPopup";
 import Signup from "./pages/Signup";
 import Homepage from "./pages/Homepage";
 import Flippage from "./pages/Flippage";
@@ -32,7 +33,7 @@ function App() {
           <Route path="/SignUp" element={<Signup />} />
           <Route path="/dashboard" element={<DashBoard />} />
           <Route path="/ForgotPassword" element={<ForgotPassword/>}/>
-
+	  <Route path="/faq" element={<FaqPage />}/>
         </Routes>
       </BrowserRouter>
     </CoinFlipProvider>

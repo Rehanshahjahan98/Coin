@@ -14,7 +14,8 @@ const Navbar = (props) => {
   const navigate = useNavigate();
 
   const toggleFaqsPopup = () => {
-    setIsFaqsOpen(!isFaqsOpen);
+    navigate("/faq");
+
   };
 
   const toggleConnectPopup = () => {
