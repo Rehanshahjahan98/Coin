@@ -5,7 +5,7 @@ import discord from '../assets/discord.png';
 import logo from '../assets/side-logo.png';
 import { FaTimes } from 'react-icons/fa';
 
-const FaqPopup = ({ onClose }) => {
+const Terms = ({ onClose }) => {
   const [section, setSection] = useState('general');
 
   const content = {
@@ -174,5 +174,5 @@ const FaqPopup = ({ onClose }) => {
   );
 };
 
-export default FaqPopup;
+export default Terms;
 
