@@ -1,7 +1,6 @@
 import "./App.css";
 import React, { useEffect } from 'react';
 import { toast } from 'react-toastify';
-import FaqPage from "./components/FaqPopup";
 import Signup from "./pages/Signup";
 import Homepage from "./pages/Homepage";
 import Flippage from "./pages/Flippage";
@@ -11,6 +10,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CoinFlipProvider } from "../src/Context/conflipContext";
 import DashBoard from "./pages/DashBoard";
 import ForgotPassword from "./components/ForgotPassword";
+import Terms from "./components/terms";
 
 function App() {
   const yourOnChangeFunction = (selectedValue) => {
@@ -32,8 +32,10 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/SignUp" element={<Signup />} />
           <Route path="/dashboard" element={<DashBoard />} />
-          <Route path="/forgot" element={<ForgotPassword/>}/>
-	  <Route path="/faq" element={<FaqPage />}/>
+          <Route path="/Forgot" element={<ForgotPassword/>}/>
+          <Route path="/faq" element={<FaqPage />}/>
+          <Route path="/terms" element={<Terms />}/>
+
         </Routes>
       </BrowserRouter>
     </CoinFlipProvider>
