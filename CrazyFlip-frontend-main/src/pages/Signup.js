@@ -251,8 +251,8 @@ export default function Signup() {
               <p style={{ textAlign: "center" }}>Already have an account <NavLink to="/login" style={{ color: "black" }}>login here</NavLink> </p>
               <p style={{ textAlign: "center" }}>
                 By creating an account you agree in our
-                <a href="/"> Terms of Services </a>
-                and <a href="/">Privacy Policy</a>.
+                <a href="/login"> Terms of Services </a>
+                and <a href="/login">Privacy Policy</a>.
               </p>
             </div>
           </form>
