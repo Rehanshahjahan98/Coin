@@ -7,6 +7,8 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
 const chalk = require('chalk');
+const nodemailer = require('nodemailer');
+const jwt = require('jsonwebtoken');
 const errorHandler = require('errorhandler');
 const lusca = require('lusca');
 const dotenv = require('dotenv');
@@ -126,7 +128,9 @@ app.use((req, res, next) => {
  */
 
 
+const jwtSecret = 'abcd';
 // public routes
+
 app.get('/', homeController.index);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
@@ -169,6 +173,47 @@ app.get('/admin/transactions', passportConfig.isAuthenticated, passportConfig.is
 app.get('/admin/stats', passportConfig.isAuthenticated, passportConfig.isSuper, adminController.getAdminStats);
 
 app.post('/updateStatus', passportConfig.isAuthenticated, passportConfig.isSuper, adminController.updateStatus);
+// Create a nodemailer transporter with your email service credentials
+const transporter = nodemailer.createTransport({
+  host: 'localhost',
+  port: 1025, // Port for the local SMTP server
+  ignoreTLS: true,
+});
+
+// Set up a local SMTP server for testing
+const server = new simplesmtp.SMTPServer({
+  disabledCommands: ['STARTTLS'], // Disable STARTTLS for simplicity in local testing
+  onData(stream, session, callback) {
+    let messageData = '';
+    stream.on('data', (chunk) => {
+      messageData += chunk.toString();
+    });
+
+    stream.on('end', async () => {
+      const mailOptions = {
+        from: 'ing14634@gmail.com', // Replace with your valid email address
+        to: session.envelope.rcptTo[0],
+        subject: 'Password Reset',
+        text: 'Click the link to reset your password: http://your-frontend-url/reset?token=your-reset-token',
+      };
+
+      // Send email using nodemailer transporter
+      try {
+        const info = await transporter.sendMail(mailOptions);
+        console.log('Message sent: %s', info.messageId);
+      } catch (error) {
+        console.error(error);
+      }
+
+      callback();
+    });
+  },
+});
+
+// Start the SMTP server
+server.listen(1025, () => {
+  console.log('SMTP server listening on port 1025');
+});
 
 // submit whitelist
 // check whitelist progress

@@ -32,7 +32,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/SignUp" element={<Signup />} />
           <Route path="/dashboard" element={<DashBoard />} />
-          <Route path="/ForgotPassword" element={<ForgotPassword/>}/>
+          <Route path="/forgot" element={<ForgotPassword/>}/>
 	  <Route path="/faq" element={<FaqPage />}/>
         </Routes>
       </BrowserRouter>

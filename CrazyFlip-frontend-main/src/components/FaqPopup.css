@@ -11,6 +11,20 @@
   flex-direction: column;
 }
 
+.main-container1 {
+ 
+  background: url('../assets/bg.png');
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
 .scrollable-content {
   max-height: 300px; /* Adjust the max height as needed */
   overflow-y: auto;
@@ -131,3 +145,106 @@
   }
 }
 
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+@media (min-width: 768px) {
+  .form-container {
+    background-image: none;
+    width: 400px;
+    margin: 0 auto;
+    height: auto;
+  }
+}
+
+/* Add your other media queries for larger screens here */
+
+.input-container {
+  display: flex;
+  outline: none;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.input-container .icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 10px;
+}
+
+.input-container input {
+  padding: 0 0 0 55px;
+  font-size: large;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  color: black;
+}
+
+.icon {
+  padding: 10px;
+  min-width: 50px;
+  text-align: center;
+  color: #c7c7cd;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid black;
+}
+
+.btn {
+  background-color: #35c496;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  font-size: large;
+  margin-top: 30px;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+h2 {
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  color: #fba127;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.line-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.link-container {
+  margin-left: auto;
+}
+
+.link-container>a {
+  color: #a0a0a0;
+  text-decoration: none;
+}

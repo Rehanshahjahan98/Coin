@@ -224,7 +224,7 @@ useEffect(() => {
             <label htmlFor="remMe">Remember me</label>
           </div>
           <div className="link-container">
-            <Link to="/forgotpassword">Forgot Password</Link>
+            <Link to="/forgot">Forgot Password</Link>
           </div>
         </div>
         <button onClick={loginAccount} type="submit" className="btn">

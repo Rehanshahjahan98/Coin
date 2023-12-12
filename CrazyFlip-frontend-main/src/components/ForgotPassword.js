@@ -1,7 +1,8 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Navbar from "../components/Navbar";
 import axios from 'axios';
+import './FaqPopup.css';
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
@@ -14,31 +15,43 @@ const ForgotPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        console.log("before request");
-      const response = await axios.post('http://185.193.126.26:8080/forgot', {email}
-      );
-    //   setMessage(response.data.message);
-    alert(response.data.message);
+      const response = await axios.post('http://185.193.126.26:8080/forgot', { email });
+      alert(response.data.message);
     } catch (error) {
-      console.log(error, "err message");
       setMessage(error.response.data.message);
     }
   };
 
   return (
-    <div className='text-white'>
-      <h2>Forgot Password</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Email:
-          <input type="email" value={email} onChange={handleEmailChange} />
-        </label>
-        <button type="submit">Reset Password</button>
-      </form>
-
-      {/* Link to go back to the Login page */}
-      <Link to="/login">Back to Login</Link>
+    <>
+    <div className="navbar">
+        <Navbar />
     </div>
+    <div className="main-container1">
+      <form>
+        <h2>Forgot Password</h2>
+        <div className="input-container">
+          <i className="fa fa-envelope icon"></i>
+          <input
+            className="input-field"
+            type="email"
+            placeholder="Email"
+            name="email"
+            required
+            onChange={handleEmailChange}
+          />
+        </div>
+        <button type="submit" className="btn">
+          Reset Password
+        </button>
+        <div className="line-container">
+          <div className="link-container">
+            <a href="/login">Back to Login</a>
+          </div>
+        </div>
+      </form>
+    </div>
+   </>
   );
 };
 

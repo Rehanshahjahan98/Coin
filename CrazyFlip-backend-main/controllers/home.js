@@ -1,14 +1,22 @@
 const User = require('../models/User');
 
 exports.index = async (req, res) => {
-  let users = await User.find({ pendingApproval: true });
-  res.status(200).json({
-    success: true,
-    message: 'Fetched Successfully',
-    users: users
-  });
+  try {
+    let users = await User.find({ pendingApproval: true });
+    res.status(200).json({
+      success: true,
+      message: 'Fetched Successfully',
+      users: users
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      success: false,
+      message: 'Error fetching users',
+      error: error.message,
+    });
+  }
 };
-
 
 exports.about = (req, res) => {
   res.status(200).json({
@@ -38,29 +46,32 @@ exports.onboard = (req, res) => {
     { new: true },
     (err, updatedUser) => {
       if (err) {
-        res.status(400).json({
+        console.error(err);
+        res.status(500).json({
           success: false,
           message: 'Error updating user information',
+          error: err.message,
+        });
+      } else {
+        res.status(200).json({
+          success: true,
+          message: 'Onboarding request successful',
         });
       }
-      res.status(200).json({
-        success: true,
-        message: 'Onboarding request sucessful',
-      });
     }
   );
 };
 
-//handles admin approvals
+// Handles admin approvals
 exports.onApprove = (req, res) => {
   const uid = req.body._id;
   User.findOneAndUpdate({ _id: uid }, { status: 'approved', pendingApproval: false }, (err, user) => {
     if (err) {
-      console.log(err);
-      res.status(400).json({
-        success: true,
-        message: '',
-        err
+      console.error(err);
+      res.status(500).json({
+        success: false,
+        message: 'Error approving user',
+        error: err.message,
       });
     } else {
       res.status(200).json({
@@ -71,16 +82,16 @@ exports.onApprove = (req, res) => {
   });
 };
 
-//handles admin rejections
+// Handles admin rejections
 exports.onReject = (req, res) => {
   const uid = req.body._id;
   User.findOneAndUpdate({ _id: uid }, { status: 'rejected', pendingApproval: false }, (err, user) => {
     if (err) {
-      console.log(err);
-      res.status(400).json({
-        success: true,
-        message: '',
-        err
+      console.error(err);
+      res.status(500).json({
+        success: false,
+        message: 'Error rejecting user',
+        error: err.message,
       });
     } else {
       res.status(200).json({

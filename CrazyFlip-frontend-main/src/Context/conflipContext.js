@@ -8,32 +8,29 @@ import {
 	affiliateABI,
 	affiliateContractAddress,
 } from "./constant";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import toastify from 'react-toastify';
 
 export const CoinFlipContext = React.createContext();
-
+//toast.configure();
 const fetchContract = (signerOrProvider) =>
 	new ethers.Contract(coinFlipContractAddress, coinFlipABI, signerOrProvider);
 
-//---CONNECTING WITH SMART CONTRACT
 
-const connectingWithSmartContract = async () => {
-	try {
-		const web3Modal = new Web3Modal();
-		const connection = await web3Modal.connect();
-		console.log("check");
-		if (!connection) {
-			throw new Error("Connection modal closed by user");
-                    
-		}
-		const provider = new ethers.providers.Web3Provider(connection);
-		const signer = provider.getSigner();
-		const contract = fetchContract(signer);
-		return [signer, contract];
-	} catch (error) {
-		console.log("Something went wrong while connecting with contract", error);
-		throw error;
-	}
+//---CONNECTING WITH SMART CONTRACT
+const handleError = (error) => {
+  if (error.message === 'Modal closed by user') {
+    toast.error('Connection error.');
+    toast.error(' Please connect your metamask wallet and try again later.');
+  } else {
+    console.error('Unhandled error haha:', error);
+    toast.error('An error occurred.');
+    toast.error('Please connect your metamask wallet and try again later.');
+  }
 };
+
+
 
 export const CoinFlipProvider = ({ children }) => {
 	// eslint-disable-next-line no-unused-vars
@@ -42,8 +39,38 @@ export const CoinFlipProvider = ({ children }) => {
 	// eslint-disable-next-line no-unused-vars
 	const [accountBalance, setAccountBalance] = useState("");
 	const [signer, setSigner] = useState("");
+	const [walletErrorShown, setWalletErrorShown] = useState(false);
 	const [trxHistory, settrxHistory] = useState([]);
-
+	const showToastError = () => {
+	    if (!walletErrorShown) {
+	      toast.error('Connection error. Please connect your MetaMask wallet and try again later.', {
+	        position: toast.POSITION.MIDDLE_CENTER,
+	        autoClose: 10000,
+	      });
+	      setWalletErrorShown(true);
+	    }
+	  };
+	const connectingWithSmartContract = async () => {
+	        try {
+	                const web3Modal = new Web3Modal();
+	                const connection = await web3Modal.connect();
+	                console.log("check");
+	                if (!connection) {
+	                        
+	                        throw new Error("Connection modal closed by user");
+	                    
+	                }
+	                const provider = new ethers.providers.Web3Provider(connection);
+	                const signer = provider.getSigner();
+	                const contract = fetchContract(signer);
+	                return [signer, contract];
+	        } catch (error) {
+	                console.log("Something went wrong while connecting with contract", error);
+	                
+	                //showToastError();
+	                //return null;
+	        }
+	};
 	const checkIfWalletConnected = async () => {
 		try {
 			console.log("In Check");
@@ -69,14 +96,23 @@ export const CoinFlipProvider = ({ children }) => {
 			setError("Something wrong while connecting to wallet");
 		}
 	};
-
 	useEffect(() => {
 		checkIfWalletConnected();
 	}, []);
 
 	useEffect(() => {
-		getLastPlays();
-	});
+	  const fetchData = async () => {
+	    if (await checkIfWalletConnected()) {
+	      getLastPlays();
+	    } else {
+	      showToastError();
+	      console.log("Wallet is not connected");
+	    }
+	  };
+
+	 fetchData();
+	}, []);
+
 	const disconnectWallet = () => {
 	  setCurrentAccount("");
 	};
@@ -188,6 +224,7 @@ export const CoinFlipProvider = ({ children }) => {
 			return date.toLocaleString();
 		}
 	}
+	
 	const getLastPlays = async () => {
 		const signerAndContract = await connectingWithSmartContract();
 		const contract = signerAndContract[1];
@@ -210,22 +247,28 @@ export const CoinFlipProvider = ({ children }) => {
 				settrxHistory(data);
 			})
 			.catch((error) => {
-				console.log(error);
+				handleError(error);
+    				throw error;
+				console.log("check",error);
 			});
 	};
 
+
 	return (
-		<CoinFlipContext.Provider
-			value={{
-				checkIfWalletConnected,
-				connectWallet,
-				disconnectWallet,
-				currentAccount,
-				runBet,
-				trxHistory,
-			}}
-		>
-			{children}
-		</CoinFlipContext.Provider>
-	);
+    <>
+      <CoinFlipContext.Provider
+        value={{
+          checkIfWalletConnected,
+          connectWallet,
+          disconnectWallet,
+          currentAccount,
+          runBet,
+          trxHistory,
+        }}
+      >
+        {children}
+      </CoinFlipContext.Provider>
+      <ToastContainer />
+    </>
+  );
 };
