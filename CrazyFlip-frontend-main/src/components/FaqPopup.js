@@ -10,14 +10,14 @@ const FaqPopup = ({ onClose }) => {
 
   const content = {
     general: {
-      title: 'Terms Of Service',
+      title: 'General FAQ',
       questions: [
         {
-          question: 'Last Updated: 10/28/23',
-          answer: 'Please read these Terms and Conditions carefully before using Our Service Welcome to Hopiumbet.gg (the “Site”). The Site is operated by Hopiumbet.gg (the “Company”, “we” “our” or “us”).',
+          question: 'Why Hopiumbet.gg?',
+          answer: 'We have been involved in all aspects of P2E tokens, NFTs, etc. and wanted to create a Coinflip type game where Flippers could use their P2E tokens to play.',
         },
         {
-          question: 'Acknowledgement',
+          question: 'What tokens and how much can I bet?',
           answer: 'On the Coinflip homepage, a dropdown is available that shows which tokens are currently available. Once you pick a token, a table to the left will show how much of that token you can bet.',
         },
         {
