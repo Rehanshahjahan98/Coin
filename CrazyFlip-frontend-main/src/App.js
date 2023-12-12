@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CoinFlipProvider } from "../src/Context/conflipContext";
 import DashBoard from "./pages/DashBoard";
 import ForgotPassword from "./components/ForgotPassword";
+import FaqPopup from "./components/FaqPopup";
 import Terms from "./components/terms";
 
 function App() {
@@ -33,7 +34,7 @@ function App() {
           <Route path="/SignUp" element={<Signup />} />
           <Route path="/dashboard" element={<DashBoard />} />
           <Route path="/Forgot" element={<ForgotPassword/>}/>
-          <Route path="/faq" element={<FaqPage />}/>
+          <Route path="/faq" element={<FaqPopup />}/>
           <Route path="/terms" element={<Terms />}/>
 
         </Routes>
