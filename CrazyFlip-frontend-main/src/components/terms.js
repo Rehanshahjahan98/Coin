@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './terms.css';
+import './FaqPopup.css';
 import './ConnectPopup.css';
 import discord from '../assets/discord.png';
 import logo from '../assets/side-logo.png';
