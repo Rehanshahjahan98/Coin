@@ -42,7 +42,13 @@ export const CoinFlipProvider = ({ children }) => {
 	const [signer, setSigner] = useState("");
 	const [walletErrorShown, setWalletErrorShown] = useState(false);
 	const [trxHistory, settrxHistory] = useState([]);
+	useEffect(() => {
 	
+		if (checkIfWalletConnected()) {
+			setWalletErrorShown(false);
+		}
+	}, []); 
+
 	const showToastError = () => {
 
 	    if (!walletErrorShown) {
@@ -54,14 +60,7 @@ export const CoinFlipProvider = ({ children }) => {
 	    }
 		
 	  };
-	useEffect(() => {
 	
-		const isWalletConnected = true; 
-	
-		if (isWalletConnected) {
-			setWalletErrorShown(false);
-		}
-	}, []); 
 	const connectingWithSmartContract = async () => {
 	        try {
 	                const web3Modal = new Web3Modal();
