@@ -146,7 +146,7 @@ const Terms = ({ onClose }) => {
         
         <div className='faq'>
                
-            <div>
+            <div className='white'>
               <p>
                 Please read these Terms and Conditions carefully before using Our Service. Welcome to Hopiumbet.gg (the “Site”). The Site is operated by Hopiumbet.gg (the “Company”, “we” “our” or “us”).
                 These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service
