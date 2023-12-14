@@ -19,13 +19,46 @@ const Terms = ({ onClose }) => {
           answer: 'Please read these Terms and Conditions carefully before using Our Service. Welcome to Hopiumbet.gg (the “Site”). The Site is operated by Hopiumbet.gg (the “Company”, “we” “our” or “us”).',
         },
         {
-          question: 'What tokens and how much can I bet?',
-          answer: 'On the Coinflip homepage, a dropdown is available that shows which tokens are currently available. Once you pick a token, a table to the left will show how much of that token you can bet.',
+          question: 'Acknowledgement',
+          answer: 'These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service. Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service. By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service. By accessing or using the Services You confirm to be 18 years or older. If You are not 18 years or older You may not access the Service. You are not allowed to register on the Website and use our services if you are a resident of Aruba, Australia, Belgium, Bonaire, Curacao, Cyprus, Denmark, Estonia, France, Germany, Hungary, Iran, Iraq, Italy, Netherlands, Saba, Slovakia, Spain, St Maarten, Statia, Turkey, United Arab Emirates, U.S.A or the U.S.A dependencies, United Kingdom. We reserve the right to refuse customers from any other countries over and above the aforementioned jurisdictions at our own discretion. For legal reasons, some or all residents or persons located in certain countries, in addition to those listed in the paragraph above, may be prohibited from accessing certain services on the Website. This Website is not intended to be used by persons in countries where such activities are prohibited. You are responsible for researching the laws applicable in your locality or country. You must ensure that you are complying with the law in the jurisdiction in which you are using the Website or any Service. Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when You use the Application or the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service In the Agreement, "you" or "your" or "user" or “player” means any person who uses the Site, Services or the Software under the Agreement. Important: Please review the Privacy Policy prior to your use of the Site or the Services.',
         },
         {
-          question: 'What are the odds/cost?',
-          answer: 'Odds are 50/50 and there is a 5% fee charged on losing and winning flips.',
+          question: 'Definitions',
+          answer: 'For the purposes of these Terms and Conditions: Account means a unique account created for You to access our Service or parts of our Service. Company (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to Hopiumbet.gg Service refers to the Website. Terms and Conditions (also referred as "Terms") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service. Third-party Social Media Service means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service. Website refers to hopiumbet.gg You means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.',
         },
+        {
+          question: 'What does it pay?',
+          answer: 'As an Affiliate, you will receive 20% of Hopiumbet.gg’s fees received from every bet your Affiliate places. For example, if an Affiliate of yours place a 20 token bet and wins, Hopiumbet.gg’s fee is 5%, or 2 tokens (.05 * 40 tokens). You, as an Affiliate, would receive 0.02 tokens automatically to your wallet.',
+        },
+        {
+          question: 'Are there any other advantages of becoming an Affiliate and getting Affiliates under you?',
+          answer: 'Yes, you will be airdropped FREE $Hopiumbet tokens based on the volume of you and your Affiliates! Tokens will be airdropped every Month based on the previous month’s volume of bets.',
+        },
+        {
+          question: 'What does it pay?',
+          answer: 'As an Affiliate, you will receive 20% of Hopiumbet.gg’s fees received from every bet your Affiliate places. For example, if an Affiliate of yours place a 20 token bet and wins, Hopiumbet.gg’s fee is 5%, or 2 tokens (.05 * 40 tokens). You, as an Affiliate, would receive 0.02 tokens automatically to your wallet.',
+        },
+        {
+          question: 'Are there any other advantages of becoming an Affiliate and getting Affiliates under you?',
+          answer: 'Yes, you will be airdropped FREE $Hopiumbet tokens based on the volume of you and your Affiliates! Tokens will be airdropped every Month based on the previous month’s volume of bets.',
+        },
+        {
+          question: 'What does it pay?',
+          answer: 'As an Affiliate, you will receive 20% of Hopiumbet.gg’s fees received from every bet your Affiliate places. For example, if an Affiliate of yours place a 20 token bet and wins, Hopiumbet.gg’s fee is 5%, or 2 tokens (.05 * 40 tokens). You, as an Affiliate, would receive 0.02 tokens automatically to your wallet.',
+        },
+        {
+          question: 'Are there any other advantages of becoming an Affiliate and getting Affiliates under you?',
+          answer: 'Yes, you will be airdropped FREE $Hopiumbet tokens based on the volume of you and your Affiliates! Tokens will be airdropped every Month based on the previous month’s volume of bets.',
+        },
+        {
+          question: 'What does it pay?',
+          answer: 'As an Affiliate, you will receive 20% of Hopiumbet.gg’s fees received from every bet your Affiliate places. For example, if an Affiliate of yours place a 20 token bet and wins, Hopiumbet.gg’s fee is 5%, or 2 tokens (.05 * 40 tokens). You, as an Affiliate, would receive 0.02 tokens automatically to your wallet.',
+        },
+        {
+          question: 'Are there any other advantages of becoming an Affiliate and getting Affiliates under you?',
+          answer: 'Yes, you will be airdropped FREE $Hopiumbet tokens based on the volume of you and your Affiliates! Tokens will be airdropped every Month based on the previous month’s volume of bets.',
+        },
+        
         
        {
 	  question: 'How can I contact Hopiumbet.gg for Support?',
