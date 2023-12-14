@@ -113,12 +113,11 @@ export const CoinFlipProvider = ({ children }) => {
 
 	useEffect(() => {
 	  const fetchData = async () => {
-	    if (await !checkIfWalletConnected()) {
-			showToastError();
-			console.log("Wallet is not connected");
-			
+	    if (await checkIfWalletConnected()) {
+	      getLastPlays();
 	    } else {
-			getLastPlays();
+	      showToastError();
+	      console.log("Wallet is not connected");
 	    }
 	  };
 
