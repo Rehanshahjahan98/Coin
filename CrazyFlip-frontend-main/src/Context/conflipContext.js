@@ -52,7 +52,8 @@ export const CoinFlipProvider = ({ children }) => {
 	      });
 	      setWalletErrorShown(true);
 	    }
-		elseif(){
+		else
+		{
 			setWalletErrorShown(false);
 		}
 	  };
