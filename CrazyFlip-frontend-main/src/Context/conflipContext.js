@@ -52,7 +52,7 @@ export const CoinFlipProvider = ({ children }) => {
 	const showToastError = () => {
 
 	    if (!walletErrorShown) {
-	      toast.error('Connection error. Please connect your MetaMask wallet and try again later.', {
+	      toast.error('Connection error.%^ Please connect your MetaMask wallet and try again later.', {
 	        position: toast.POSITION.MIDDLE_CENTER,
 	        autoClose: 10000,
 	      });
