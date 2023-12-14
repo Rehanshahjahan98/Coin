@@ -149,12 +149,13 @@ const Terms = ({ onClose }) => {
             <div className='white'>
               <p>
                 Please read these Terms and Conditions carefully before using Our Service. Welcome to Hopiumbet.gg (the “Site”). The Site is operated by Hopiumbet.gg (the “Company”, “we” “our” or “us”).
+                <br/><br/><span className='orange'>Acknowledgement</span><br/>
                 These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service
                 Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service.
                 By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.
                 By accessing or using the Services You confirm to be 18 years or older. If You are not 18 years or older You may not access the Service.
                 
-                <br/><br/>You are not allowed to register on the Website and use our services if you are a resident of Aruba, Australia, Belgium, Bonaire, Curacao, Cyprus, Denmark, Estonia, France, Germany, Hungary, Iran, Iraq, Italy, Netherlands, Saba, Slovakia, Spain, St Maarten, Statia, Turkey, United Arab Emirates, U.S.A or the U.S.A dependencies, United Kingdom. We reserve the right to refuse customers from any other countries over and above the aforementioned jurisdictions at our own discretion.
+                You are not allowed to register on the Website and use our services if you are a resident of Aruba, Australia, Belgium, Bonaire, Curacao, Cyprus, Denmark, Estonia, France, Germany, Hungary, Iran, Iraq, Italy, Netherlands, Saba, Slovakia, Spain, St Maarten, Statia, Turkey, United Arab Emirates, U.S.A or the U.S.A dependencies, United Kingdom. We reserve the right to refuse customers from any other countries over and above the aforementioned jurisdictions at our own discretion.
                 
                 For legal reasons, some or all residents or persons located in certain countries, in addition to those listed in the paragraph above, may be prohibited from accessing certain services on the Website. This Website is not intended to be used by persons in countries where such activities are prohibited. You are responsible for researching the laws applicable in your locality or country. You must ensure that you are complying with the law in the jurisdiction in which you are using the Website or any Service.
                 
@@ -166,7 +167,7 @@ const Terms = ({ onClose }) => {
                 Important: Please review the Privacy Policy prior to your use of the Site or the Services.
                 
                 By using or accessing the Site or, you consent to the terms and conditions set forth in the Agreement and agree to be bound by its terms.
-                Definitions
+                <br/><br/><span className='orange'>Definitions</span><br/>
                 For the purposes of these Terms and Conditions:
                 
                 Account means a unique account created for You to access our Service or parts of our Service.
