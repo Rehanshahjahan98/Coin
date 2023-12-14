@@ -52,7 +52,7 @@ export const CoinFlipProvider = ({ children }) => {
 	const showToastError = () => {
 
 	    if (!walletErrorShown) {
-	      toast.error('Connection error.%^ Please connect your MetaMask wallet and try again later.', {
+	      toast.error('Connection error. Please connect your MetaMask wallet and try again later.', {
 	        position: toast.POSITION.MIDDLE_CENTER,
 	        autoClose: 10000,
 	      });
@@ -113,11 +113,12 @@ export const CoinFlipProvider = ({ children }) => {
 
 	useEffect(() => {
 	  const fetchData = async () => {
-	    if (await checkIfWalletConnected()) {
-	      getLastPlays();
+	    if (await !checkIfWalletConnected()) {
+			showToastError();
+			console.log("Wallet is not connected");
+			
 	    } else {
-	      showToastError();
-	      console.log("Wallet is not connected");
+			getLastPlays();
 	    }
 	  };
 
