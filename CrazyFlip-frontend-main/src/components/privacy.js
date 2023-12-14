@@ -196,7 +196,7 @@ const Private = ({ onClose }) => {
                 Data Controller for the purposes of the GDPR (General Data Protection Regulation), refers to the Company as the legal person which alone or jointly with others determines the purposes and means of the processing of Personal Data.
                 
                 <br/><br/><span className='title'>Collecting and Using Your Personal Data</span><br/>
-                Personal Data
+                <br/><br/><span className='title'>Personal Data</span><br/>
 
                 While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:
 
@@ -204,7 +204,7 @@ const Private = ({ onClose }) => {
                 Usage Data
                 Wallet Address
 
-                Usage Data
+                <br/><br/><span className='title'>Usage Data</span><br/>
 
                 Usage Data is collected automatically when using the Service.
 
@@ -214,7 +214,7 @@ const Private = ({ onClose }) => {
 
                 We may also collect information that Your browser sends whenever You visit our Service or when You access the Service by or through a mobile device.
 
-                Tracking Technologies and Cookies
+                <br/><br/><span className='title'></span>Tracking Technologies and Cookies<br/>
 
                 We use Cookies and similar tracking technologies to track the activity on Our Service and store certain information. Tracking technologies used are beacons, tags, and scripts to collect and track information and to improve and analyze Our Service.
 
@@ -252,7 +252,7 @@ const Private = ({ onClose }) => {
 
                 For more information about the cookies we use and your choices regarding cookies, please visit our Cookies Policy.
 
-                Use of Your Personal Data
+                <br/><br/><span className='title'>Use of Your Personal Data</span><br/>
 
                 The Company may use Personal Data for the following purposes:
 
@@ -274,13 +274,12 @@ const Private = ({ onClose }) => {
 
                 With Business partners: We may share Your information with Our business partners to offer You certain products, services or promotions.
 
-                Retention of Your Personal Data
-
+                <br/><br/><span className='title'>Retention of Your Personal Data</span><br/>
                 The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies.
 
                 The Company will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of Our Service, or We are legally obligated to retain this data for longer time periods.
 
-                Transfer of Your Personal Data
+                <br/><br/><span className='title'>Transfer of Your Personal Data</span><br/>
 
                 Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located.
 
@@ -292,15 +291,15 @@ const Private = ({ onClose }) => {
                 
                 <br/><br/><span className='title'>Disclosure of Your Personal Data</span><br/>
                 
-                Business Transactions
+                <br/><br/><span className='title'>Business Transactions</span><br/>
 
                 If the Company is involved in a merger, acquisition or asset sale, Your Personal Data may be transferred. We will provide notice before Your Personal Data is transferred and becomes subject to a different Privacy Policy.
 
-                Law enforcement
+                <br/><br/><span className='title'>Law enforcement</span><br/>
 
                 Under certain circumstances, the Company may be required to disclose Your Personal Data if required to do so by law or in response to valid requests by public authorities (e.g. a court or a government agency).
 
-                Other legal requirements
+                <br/><br/><span className='title'>Other legal requirements</span><br/>
 
                 The Company may disclose Your Personal Data in the good faith belief that such action is necessary to:
 
@@ -314,23 +313,23 @@ const Private = ({ onClose }) => {
 
                 Protect against legal liability
 
-                Security of Your Personal Data
+                <br/><br/><span className='title'>Security of Your Personal Data</span><br/>
 
                 The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.
 
-                Detailed Information on the Processing of Your Personal Data
+                <br/><br/><span className='title'>Detailed Information on the Processing of Your Personal Data</span><br/>
 
                 Service Providers have access to Your Personal Data only to perform their tasks on Our behalf and are obligated not to disclose or use it for any other purpose.
 
-                Analytics
+                <br/><br/><span className='title'>Analytics</span><br/>
 
                 We may use third-party Service providers to monitor and analyze the use of our Service.
 
-                Email Marketing
+                <br/><br/><span className='title'>Email Marketing</span><br/>
 
                 We may use Your Personal Data to contact You with newsletters, marketing or promotional materials and other information that may be of interest to You. You may opt- out of receiving any, or all, of these communications from Us by following the unsubscribe link or instructions provided in any email We send.
 
-                Payments
+                <br/><br/><span className='title'>Payments</span><br/>
 
                 We may provide paid products and/or services within the Service. In that case, we may use third-party services for payment processing (e.g. payment processors).
 
@@ -339,7 +338,7 @@ const Private = ({ onClose }) => {
                 <br/><br/><span className='title'>Usage, Performance and Miscellaneous</span><br/>
                 We may use third-party Service Providers to provide better improvement of our Service.
 
-                GDPR Privacy
+                <br/><br/><span className='title'>GDPR Privacy</span><br/>
 
                 Legal Basis for Processing Personal Data under GDPR
 
@@ -359,7 +358,7 @@ const Private = ({ onClose }) => {
 
                 In any case, the Company will gladly help to clarify the specific legal basis that applies to the processing, and in particular whether the provision of Personal Data is a statutory or contractual requirement, or a requirement necessary to enter into a contract.
 
-                Your Rights under the GDPR
+                <br/><br/><span className='title'>Your Rights under the GDPR</span><br/>
 
                 The Company undertakes to respect the confidentiality of Your Personal Data and to guarantee You can exercise Your rights.
 
@@ -377,23 +376,22 @@ const Private = ({ onClose }) => {
 
                 Withdraw Your consent. You have the right to withdraw Your consent on using your Personal Data. If You withdraw Your consent, We may not be able to provide You with access to certain specific functionalities of the Service.
 
-                Exercising of Your GDPR Data Protection Rights
-
+                <br/><br/><span className='title'>Exercising of Your GDPR Data Protection Rights</span><br/>
                 You may exercise Your rights of access, rectification, cancellation and opposition by contacting Us. Please note that we may ask You to verify Your identity before responding to such requests. If You make a request, We will try our best to respond to You as soon as possible.
 
                 You have the right to complain to a Data Protection Authority about Our collection and use of Your Personal Data. For more information, if You are in the European Economic Area (EEA), please contact Your local data protection authority in the EEA.
 
-                Children's Privacy
+                <br/><br/><span className='title'>Children's Privacy</span><br/>
 
                 Our Service does not address anyone under the age of 18. You must be at least 18 years or older in order to use our services, we do not offer our services to minors. We do not knowingly collect personally identifiable information from anyone under the age of 18. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 18 without verification of parental consent, We take steps to remove that information from Our servers as well as taking active steps to ban this user from our services and website.
 
-                Links to Other Websites
+                <br/><br/><span className='title'>Links to Other Websites</span><br/>
 
                 Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit.
 
                 We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.
 
-                Changes to this Privacy Policy
+                <br/><br/><span className='title'>Changes to this Privacy Policy</span><br/>
 
                 We may update our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.
 
