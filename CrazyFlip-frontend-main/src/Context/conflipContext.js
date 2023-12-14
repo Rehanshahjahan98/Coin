@@ -21,7 +21,7 @@ const fetchContract = (signerOrProvider) =>
 //---CONNECTING WITH SMART CONTRACT
 const handleError = (error) => {
   if (error.message === 'Modal closed by user') {
-    toast.error('Connection error.');
+    toast.error('Connection error. !!!');
     toast.error(' Please connect your metamask wallet and try again later.');
   } else {
     console.error('Unhandled error haha:', error);
