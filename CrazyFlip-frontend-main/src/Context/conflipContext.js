@@ -13,6 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import toastify from 'react-toastify';
 
 export const CoinFlipContext = React.createContext();
+
 //toast.configure();
 const fetchContract = (signerOrProvider) =>
 	new ethers.Contract(coinFlipContractAddress, coinFlipABI, signerOrProvider);
@@ -39,9 +40,11 @@ export const CoinFlipProvider = ({ children }) => {
 	// eslint-disable-next-line no-unused-vars
 	const [accountBalance, setAccountBalance] = useState("");
 	const [signer, setSigner] = useState("");
-	const [walletErrorShown, setWalletErrorShown] = useState(false);
+	const [walletErrorShown, setWalletErrorShown] = useState("");
 	const [trxHistory, settrxHistory] = useState([]);
+	
 	const showToastError = () => {
+
 	    if (!walletErrorShown) {
 	      toast.error('Connection error. Please connect your MetaMask wallet and try again later.', {
 	        position: toast.POSITION.MIDDLE_CENTER,
@@ -49,6 +52,9 @@ export const CoinFlipProvider = ({ children }) => {
 	      });
 	      setWalletErrorShown(true);
 	    }
+		elseif(){
+			setWalletErrorShown(false);
+		}
 	  };
 	const connectingWithSmartContract = async () => {
 	        try {
