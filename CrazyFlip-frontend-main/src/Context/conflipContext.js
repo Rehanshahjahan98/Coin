@@ -115,10 +115,13 @@ export const CoinFlipProvider = ({ children }) => {
 	  const fetchData = async () => {
 	    if (await checkIfWalletConnected()) {
 	      getLastPlays();
-	    } else {
+	    } else if(await !checkIfWalletConnected()){
 	      showToastError();
 	      console.log("Wallet is not connected");
 	    }
+		else{
+			console.log("Try again");
+		}
 	  };
 
 	 fetchData();
