@@ -12,6 +12,7 @@ import DashBoard from "./pages/DashBoard";
 import ForgotPassword from "./components/ForgotPassword";
 import FaqPage from "./components/FaqPopup";
 import Terms from "./components/terms";
+import Privacy from "./components/privacy";
 
 function App() {
   const yourOnChangeFunction = (selectedValue) => {
@@ -36,6 +37,7 @@ function App() {
           <Route path="/Forgot" element={<ForgotPassword/>}/>
           <Route path="/faq" element={<FaqPage/>}/>
           <Route path="/terms" element={<Terms />}/>
+          <Route path="/privacy" element={<Privacy />}/>
 
         </Routes>
       </BrowserRouter>
