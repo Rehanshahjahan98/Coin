@@ -146,12 +146,12 @@ const Terms = ({ onClose }) => {
         
         <div className='faq'>
           <div className='centered-title'>
-	            <span className='title'>Terms Of Service</span>
+	            <span className='title'>Terms Of Service</span><br/><br/>
             </div>
             <div className='white'>
               <p>
                 Please read these Terms and Conditions carefully before using Our Service. Welcome to Hopiumbet.gg (the “Site”). The Site is operated by Hopiumbet.gg (the “Company”, “we” “our” or “us”).
-                <br/><br/><span className='orange'>Acknowledgement</span><br/>
+                <br/><br/><span className='title'>Acknowledgement</span><br/>
                 These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service
                 Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service.
                 By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.
