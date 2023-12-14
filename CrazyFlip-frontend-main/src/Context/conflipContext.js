@@ -45,7 +45,7 @@ export const CoinFlipProvider = ({ children }) => {
 	useEffect(() => {
 	
 		if (checkIfWalletConnected()) {
-			setWalletErrorShown(false);
+			setWalletErrorShown(true);
 		}
 	}, []); 
 
