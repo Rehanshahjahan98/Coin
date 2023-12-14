@@ -100,8 +100,10 @@ export const CoinFlipProvider = ({ children }) => {
 				setAccountBalance(bal);
 				const signerAndContract = await connectingWithSmartContract();
 				setSigner(signerAndContract[0]);
+				return true;
 			} else {
 				setError("No Account Found");
+				return false;
 			}
 		} catch (error) {
 			setError("Something wrong while connecting to wallet");
