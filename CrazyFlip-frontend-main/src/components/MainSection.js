@@ -44,7 +44,7 @@ const MainSection = (props) => {
 
 	const token_object = {
 		CHMB: {
-			address: "0x05c4D0258Cd83453e8d6a86f7B61249E36eCd531",
+			address: "0x5B85839D31cD45a99530bF0f2ca2D90B6B7e6aDB",
 			isTrue: false,
 		},
 		ERTHA: {
