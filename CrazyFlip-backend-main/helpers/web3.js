@@ -11,7 +11,7 @@ const addAffliateToContract = async ({ referredAddress, affiliateAddress }) => {
   try {
     let web3 = new Web3(infuraUrl);
     const adminAddress = "0x0516A5Fd8d7FF48fa3CC5d25394189b25bFc8c9a";
-    const contractAddress = '0xCb3CC7a59b4DFAa14f62668C2C588bBF1c59D13F';
+    const contractAddress = '0xE5f95c1fA96C4baDAD2f279eE8fCF5507F0c9703';
 
     const contract = new web3.eth.Contract(contractAbi, contractAddress);
     const isAffiliated = await contract.methods.isAffiliated(affiliateAddress).call();
@@ -95,7 +95,7 @@ const addAffliateToContract = async ({ referredAddress, affiliateAddress }) => {
 const whoReffered = async ({ referredAddress }) => {
   try {
     let web3 = new Web3(infuraUrl);
-    const contractAddress = '0xCb3CC7a59b4DFAa14f62668C2C588bBF1c59D13F';
+    const contractAddress = '0xE5f95c1fA96C4baDAD2f279eE8fCF5507F0c9703';
 
     const contract = new web3.eth.Contract(contractAbi, contractAddress);
     const referred = await contract.methods.getWhoReferred(referredAddress).call();
