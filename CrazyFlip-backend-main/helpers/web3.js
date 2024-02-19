@@ -4,7 +4,7 @@ const contractAbi = require("../contract-abis/affliate.json")
 const privateKey =
   "87d1970d23c81f49689cc37f8b3415e986eba8bbb8683649fa1083ed38d2a79f";
 const infuraUrl =
-  "https://eth-sepolia.g.alchemy.com/v2/5R5mOr7D3Xes8emZgWrKt8xsaNFl6yUE";
+  "https://data-seed-prebsc-1-s1.binance.org:8545";
 
 
 const addAffliateToContract = async ({ referredAddress, affiliateAddress }) => {
